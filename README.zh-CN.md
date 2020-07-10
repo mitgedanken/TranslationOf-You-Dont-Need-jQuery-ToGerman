@@ -110,9 +110,9 @@ DOM 不再是好的模式，jQuery 使用场景大大减少。本项目总结了
   el.querySelectorAll("li");
   ```
 
-- [1.5](#1.5) <a name='1.5'></a> 兄弟及上下元素
+- [1.5](#1.5) <a name='1.5'></a> 兄弟及上下元�
 
-  - 兄弟元素
+  - 兄弟元�
 
     ```js
     // jQuery
@@ -129,7 +129,7 @@ DOM 不再是好的模式，jQuery 使用场景大大减少。本项目总结了
     );
     ```
 
-  - 上一个元素
+  - 上一个元�
 
     ```js
     // jQuery
@@ -139,7 +139,7 @@ DOM 不再是好的模式，jQuery 使用场景大大减少。本项目总结了
     el.previousElementSibling;
     ```
 
-  - 下一个元素
+  - 下一个元�
 
     ```js
     // next
@@ -322,7 +322,7 @@ DOM 不再是好的模式，jQuery 使用场景大大减少。本项目总结了
     // 注意：此处为了解决当 style 值为 auto 时，返回 auto 的问题
     const win = el.ownerDocument.defaultView;
 
-    // null 的意思是不返回伪类元素
+    // null 的意思是不返回伪类元�
     win.getComputedStyle(el, null).color;
     ```
 
@@ -700,7 +700,7 @@ $(window).scrollTop();
 
 - [3.13](#3.13) <a name="3.13"></a> replaceWith
 
-  用指定的元素替换被选的元素
+  用指定的元素替换被选的元�
 
   ```js
   //jQuery

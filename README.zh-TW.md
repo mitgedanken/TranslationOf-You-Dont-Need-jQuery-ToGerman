@@ -111,7 +111,7 @@ Javascript 替代 jQuery 的方式，支援 IE 10 以上。
   el.querySelectorAll("li");
   ```
 
-- [1.5](#1.5) <a name='1.5'></a> 同層相鄰及前後元素
+- [1.5](#1.5) <a name='1.5'></a> 同層相鄰及前後元�
 
   - 同層相鄰 (兄弟元素)
 
@@ -130,7 +130,7 @@ Javascript 替代 jQuery 的方式，支援 IE 10 以上。
     );
     ```
 
-  - 同層前一個元素
+  - 同層前一個元�
 
     ```js
     // jQuery
@@ -140,7 +140,7 @@ Javascript 替代 jQuery 的方式，支援 IE 10 以上。
     el.previousElementSibling;
     ```
 
-  - 同層後一個元素
+  - 同層後一個元�
 
     ```js
     // next
@@ -150,7 +150,7 @@ Javascript 替代 jQuery 的方式，支援 IE 10 以上。
     el.nextElementSibling;
     ```
 
-  - 所有同層裡之前的元素
+  - 所有同層裡之前的元�
 
     ```js
     // jQuery (可選的過濾選擇器)
@@ -167,7 +167,7 @@ Javascript 替代 jQuery 的方式，支援 IE 10 以上。
     }
     ```
 
-  - 所有同層裡之後的元素
+  - 所有同層裡之後的元�
 
     ```js
     // jQuery (可選的過濾選擇器)
@@ -630,7 +630,7 @@ $(window).scrollTop();
 
 - [3.4](#3.4) <a name='3.4'></a> Append
 
-  Append 在父元素的最後一個子元素後追加子元素
+  Append 在父元素的最後一個子元素後追加子元�
 
   ```js
   // jQuery
@@ -751,7 +751,7 @@ Array.from(document.querySelectorAll(".inner")).forEach((el) => {
 
 - [3.12](#3.12) <a name="3.12"></a> unwrap
 
-  從 DOM 結構移除匹配元素的父元素
+  從 DOM 結構移除匹配元素的父元�
 
   ```js
   // jQuery
@@ -770,7 +770,7 @@ Array.from(document.querySelectorAll(".inner")).forEach((el) => {
 
 - [3.13](#3.13) <a name="3.13"></a> replaceWith
 
-  用提供的新內容取代任何匹配元素集中的每個元素
+  用提供的新內容取代任何匹配元素集中的每個元�
 
   ```js
   // jQuery
@@ -832,7 +832,7 @@ IE9+ 請使用 [github/fetch](http://github.com/github/fetch)，IE8+ 請使用
 [fetch-ie8](https://github.com/camsong/fetch-ie8/)，JSONP 請使用
 [fetch-jsonp](https://github.com/camsong/fetch-jsonp)。
 
-- [4.1](#4.1) <a name='4.1'></a> 從伺服器載入數據並將返回的 HTML 放入匹配的元素
+- [4.1](#4.1) <a name='4.1'></a> 從伺服器載入數據並將返回的 HTML 放入匹配的元�
   中。
 
   ```js
