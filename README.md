@@ -1,8 +1,16 @@
 ## You (Might) Don't Need jQuery [![Build Status](https://api.travis-ci.org/nefe/You-Dont-Need-jQuery.svg)](https://travis-ci.org/nefe/You-Dont-Need-jQuery)
 
-Frontend environments evolve rapidly nowadays and modern browsers have already implemented a great deal of DOM/BOM APIs which are good enough for production use. We don't have to learn jQuery from scratch for DOM manipulation or event handling. In the meantime, thanks to the spread of frontend libraries such as React, Angular and Vue, manipulating the DOM directly becomes anti-pattern, so that jQuery usage has never been less important. This project summarizes most of the alternatives in native Javascript implementation to jQuery methods, with IE 10+ support.
+Frontend environments evolve rapidly nowadays and modern browsers have already
+implemented a great deal of DOM/BOM APIs which are good enough for production
+use. We don't have to learn jQuery from scratch for DOM manipulation or event
+handling. In the meantime, thanks to the spread of frontend libraries such as
+React, Angular and Vue, manipulating the DOM directly becomes anti-pattern, so
+that jQuery usage has never been less important. This project summarizes most of
+the alternatives in native Javascript implementation to jQuery methods, with IE
+10+ support.
 
-Note: jQuery is still a great library and has many valid use cases. Don’t migrate away if you don’t want to!
+Note: jQuery is still a great library and has many valid use cases. Don’t
+migrate away if you don’t want to!
 
 ## Table of Contents
 
@@ -20,113 +28,120 @@ Note: jQuery is still a great library and has many valid use cases. Don’t migr
 
 ## Translations
 
-* [한국어](./README.ko-KR.md)
-* [正體中文](./README.zh-TW.md)
-* [简体中文](./README.zh-CN.md)
-* [Bahasa Melayu](./README-my.md)
-* [Bahasa Indonesia](./README-id.md)
-* [Português(PT-BR)](./README.pt-BR.md)
-* [Tiếng Việt Nam](./README-vi.md)
-* [Español](./README-es.md)
-* [Русский](./README-ru.md)
-* [Кыргызча](./README-kg.md)
-* [Türkçe](./README-tr.md)
-* [Italiano](./README-it.md)
-* [Français](./README-fr.md)
-* [日本語](./README-ja.md)
-* [Polski](./README-pl.md)
+- [한국어](./README.ko-KR.md)
+- [正體中文](./README.zh-TW.md)
+- [简体中文](./README.zh-CN.md)
+- [Bahasa Melayu](./README-my.md)
+- [Bahasa Indonesia](./README-id.md)
+- [Português(PT-BR)](./README.pt-BR.md)
+- [Tiếng Việt Nam](./README-vi.md)
+- [Español](./README-es.md)
+- [Русский](./README-ru.md)
+- [Кыргызча](./README-kg.md)
+- [Türkçe](./README-tr.md)
+- [Italiano](./README-it.md)
+- [Français](./README-fr.md)
+- [日本語](./README-ja.md)
+- [Polski](./README-pl.md)
 
 ## Query Selector
 
-In place of common selectors like class, id or attribute we can use `document.querySelector` or `document.querySelectorAll` for substitution. The differences lie in:
-* `document.querySelector` returns the first matched element
-* `document.querySelectorAll` returns all matched elements as NodeList. It can be converted to Array using `Array.prototype.slice.call(document.querySelectorAll(selector));` or any of the methods outlined in [makeArray](#makeArray)
-* If there are no elements matched, jQuery and `document.querySelectorAll` will return `[]`, whereas `document.querySelector` will return `null`.
+In place of common selectors like class, id or attribute we can use
+`document.querySelector` or `document.querySelectorAll` for substitution. The
+differences lie in:
 
-> Notice: `document.querySelector` and `document.querySelectorAll` are quite **SLOW**, thus try to use `document.getElementById`, `document.getElementsByClassName` or `document.getElementsByTagName` if you want to get a performance bonus.
+- `document.querySelector` returns the first matched element
+- `document.querySelectorAll` returns all matched elements as NodeList. It can
+  be converted to Array using
+  `Array.prototype.slice.call(document.querySelectorAll(selector));` or any of
+  the methods outlined in [makeArray](#makeArray)
+- If there are no elements matched, jQuery and `document.querySelectorAll` will
+  return `[]`, whereas `document.querySelector` will return `null`.
+
+> Notice: `document.querySelector` and `document.querySelectorAll` are quite
+> **SLOW**, thus try to use `document.getElementById`,
+> `document.getElementsByClassName` or `document.getElementsByTagName` if you
+> want to get a performance bonus.
 
 - [1.0](#1.0) <a name='1.0'></a> Query by selector
 
   ```js
   // jQuery
-  $('selector');
+  $("selector");
 
   // Native
-  document.querySelectorAll('selector');
+  document.querySelectorAll("selector");
   ```
 
 - [1.1](#1.1) <a name='1.1'></a> Query by class
 
   ```js
   // jQuery
-  $('.class');
+  $(".class");
 
   // Native
-  document.querySelectorAll('.class');
+  document.querySelectorAll(".class");
 
   // or
-  document.getElementsByClassName('class');
+  document.getElementsByClassName("class");
   ```
 
 - [1.2](#1.2) <a name='1.2'></a> Query by id
 
   ```js
   // jQuery
-  $('#id');
+  $("#id");
 
   // Native
-  document.querySelector('#id');
+  document.querySelector("#id");
 
   // or
-  document.getElementById('id');
+  document.getElementById("id");
 
   // or
-  window['id']
+  window["id"];
   ```
 
 - [1.3](#1.3) <a name='1.3'></a> Query by attribute
 
   ```js
   // jQuery
-  $('a[target=_blank]');
+  $("a[target=_blank]");
 
   // Native
-  document.querySelectorAll('a[target=_blank]');
+  document.querySelectorAll("a[target=_blank]");
   ```
 
 - [1.4](#1.4) <a name='1.4'></a> Query in descendants
 
   ```js
   // jQuery
-  $el.find('li');
+  $el.find("li");
 
   // Native
-  el.querySelectorAll('li');
+  el.querySelectorAll("li");
   ```
 
 - [1.5](#1.5) <a name='1.5'></a> Sibling/Previous/Next Elements
 
-  + All siblings
+  - All siblings
 
     ```js
     // jQuery
     $el.siblings();
 
     // Native - latest, Edge13+
-    [...el.parentNode.children].filter((child) =>
-      child !== el
-    );
+    [...el.parentNode.children].filter((child) => child !== el);
     // Native (alternative) - latest, Edge13+
-    Array.from(el.parentNode.children).filter((child) =>
-      child !== el
-    );
+    Array.from(el.parentNode.children).filter((child) => child !== el);
     // Native - IE10+
-    Array.prototype.filter.call(el.parentNode.children, (child) =>
-      child !== el
+    Array.prototype.filter.call(
+      el.parentNode.children,
+      (child) => child !== el
     );
     ```
 
-  + Previous sibling
+  - Previous sibling
 
     ```js
     // jQuery
@@ -135,7 +150,8 @@ In place of common selectors like class, id or attribute we can use `document.qu
     // Native
     el.previousElementSibling;
     ```
-  + Next sibling
+
+  - Next sibling
 
     ```js
     // jQuery
@@ -145,7 +161,7 @@ In place of common selectors like class, id or attribute we can use `document.qu
     el.nextElementSibling;
     ```
 
-  + All previous siblings
+  - All previous siblings
 
     ```js
     // jQuery (optional filter selector)
@@ -154,14 +170,15 @@ In place of common selectors like class, id or attribute we can use `document.qu
     // Native (optional filter function)
     function getPreviousSiblings(elem, filter) {
       var sibs = [];
-      while (elem = elem.previousSibling) {
-          if (elem.nodeType === 3) continue; // ignore text nodes
-          if (!filter || filter(elem)) sibs.push(elem);
+      while ((elem = elem.previousSibling)) {
+        if (elem.nodeType === 3) continue; // ignore text nodes
+        if (!filter || filter(elem)) sibs.push(elem);
       }
       return sibs;
     }
+    ```
 
-  + All next siblings
+  - All next siblings
 
     ```js
     // jQuery (optional selector filter)
@@ -169,29 +186,30 @@ In place of common selectors like class, id or attribute we can use `document.qu
 
     // Native (optional filter function)
     function getNextSiblings(elem, filter) {
-            var sibs = [];
-            var nextElem = elem.parentNode.firstChild;
-            do {
-                if (nextElem.nodeType === 3) continue; // ignore text nodes
-                if (nextElem === elem) continue; // ignore elem of target
-                if (nextElem === elem.nextElementSibling) {
-                    if (!filter || filter(elem)) {
-                        sibs.push(nextElem);
-                        elem = nextElem;
-                    }
-                }
-            } while(nextElem = nextElem.nextSibling)
-            return sibs;
+      var sibs = [];
+      var nextElem = elem.parentNode.firstChild;
+      do {
+        if (nextElem.nodeType === 3) continue; // ignore text nodes
+        if (nextElem === elem) continue; // ignore elem of target
+        if (nextElem === elem.nextElementSibling) {
+          if (!filter || filter(elem)) {
+            sibs.push(nextElem);
+            elem = nextElem;
+          }
         }
+      } while ((nextElem = nextElem.nextSibling));
+      return sibs;
+    }
+    ```
 
 An example of filter function:
 
 ```js
 function exampleFilter(elem) {
   switch (elem.nodeName.toUpperCase()) {
-    case 'DIV':
+    case "DIV":
       return true;
-    case 'SPAN':
+    case "SPAN":
       return true;
     default:
       return false;
@@ -201,7 +219,8 @@ function exampleFilter(elem) {
 
 - [1.6](#1.6) <a name='1.6'></a> Closest
 
-  Return the first matched element by provided selector, traversing from current element up through its ancestors in the DOM tree.
+  Return the first matched element by provided selector, traversing from current
+  element up through its ancestors in the DOM tree.
 
   ```js
   // jQuery
@@ -212,7 +231,11 @@ function exampleFilter(elem) {
 
   // Native - IE10+
   function closest(el, selector) {
-    const matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
+    const matchesSelector =
+      el.matches ||
+      el.webkitMatchesSelector ||
+      el.mozMatchesSelector ||
+      el.msMatchesSelector;
 
     while (el) {
       if (matchesSelector.call(el, selector)) {
@@ -227,7 +250,9 @@ function exampleFilter(elem) {
 
 - [1.7](#1.7) <a name='1.7'></a> Parents Until
 
-  Get the ancestors of each element in the current set of matched elements, up to but not including the element matched by the selector, DOM node, or jQuery object.
+  Get the ancestors of each element in the current set of matched elements, up
+  to but not including the element matched by the selector, DOM node, or jQuery
+  object.
 
   ```js
   // jQuery
@@ -236,7 +261,11 @@ function exampleFilter(elem) {
   // Native
   function parentsUntil(el, selector, filter) {
     const result = [];
-    const matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
+    const matchesSelector =
+      el.matches ||
+      el.webkitMatchesSelector ||
+      el.mozMatchesSelector ||
+      el.msMatchesSelector;
 
     // match start from parent
     el = el.parentElement;
@@ -256,33 +285,36 @@ function exampleFilter(elem) {
 
 - [1.8](#1.8) <a name='1.8'></a> Form
 
-  + Input/Textarea
+  - Input/Textarea
 
     ```js
     // jQuery
-    $('#my-input').val();
+    $("#my-input").val();
 
     // Native
-    document.querySelector('#my-input').value;
+    document.querySelector("#my-input").value;
     ```
 
-  + Get index of e.currentTarget between `.radio`
+  - Get index of e.currentTarget between `.radio`
 
     ```js
     // jQuery
-    $('.radio').index(e.currentTarget);
+    $(".radio").index(e.currentTarget);
 
     // Native
-    Array.from(document.querySelectorAll('.radio')).indexOf(e.currentTarget);
-    or
-    Array.prototype.indexOf.call(document.querySelectorAll('.radio'), e.currentTarget);
+    Array.from(document.querySelectorAll(".radio")).indexOf(e.currentTarget);
+    or;
+    Array.prototype.indexOf.call(
+      document.querySelectorAll(".radio"),
+      e.currentTarget
+    );
     ```
 
 - [1.9](#1.9) <a name='1.9'></a> Iframe Contents
 
   `$('iframe').contents()` returns `contentDocument` for this specific iframe
 
-  + Iframe contents
+  - Iframe contents
 
     ```js
     // jQuery
@@ -292,21 +324,21 @@ function exampleFilter(elem) {
     iframe.contentDocument;
     ```
 
-  + Iframe Query
+  - Iframe Query
 
     ```js
     // jQuery
-    $iframe.contents().find('.css');
+    $iframe.contents().find(".css");
 
     // Native
-    iframe.contentDocument.querySelectorAll('.css');
+    iframe.contentDocument.querySelectorAll(".css");
     ```
 
 - [1.10](#1.10) <a name='1.10'></a> Get body
 
   ```js
   // jQuery
-  $('body');
+  $("body");
 
   // Native
   document.body;
@@ -314,52 +346,53 @@ function exampleFilter(elem) {
 
 - [1.11](#1.11) <a name='1.11'></a> Attribute getter and setter
 
-  + Get an attribute
+  - Get an attribute
 
     ```js
     // jQuery
-    $el.attr('foo');
+    $el.attr("foo");
 
     // Native
-    el.getAttribute('foo');
+    el.getAttribute("foo");
     ```
-  + Set an attribute
+
+  - Set an attribute
 
     ```js
     // jQuery
-    $el.attr('foo', 'bar');
+    $el.attr("foo", "bar");
 
     // Native
-    el.setAttribute('foo', 'bar');
+    el.setAttribute("foo", "bar");
     ```
 
-  + Get a `data-` attribute
+  - Get a `data-` attribute
 
     ```js
     // jQuery
-    $el.data('foo');
+    $el.data("foo");
 
     // Native (use `getAttribute`)
-    el.getAttribute('data-foo');
+    el.getAttribute("data-foo");
 
     // Native (use `dataset` if only need to support IE 11+)
-    el.dataset['foo'];
+    el.dataset["foo"];
     ```
 
 - [1.12](#1.12) <a name='1.12'></a> Selector containing string (case-sensitive)
 
-    ```js
-    // jQuery
-    $("selector:contains('text')");
+  ```js
+  // jQuery
+  $("selector:contains('text')");
 
-    // Native
-    function contains(selector, text) {
-      var elements = document.querySelectorAll(selector);
-      return Array.from(elements).filter(function(element) {
-        return RegExp(text).test(element.textContent);
-      });
-    }
-    ```
+  // Native
+  function contains(selector, text) {
+    var elements = document.querySelectorAll(selector);
+    return Array.from(elements).filter(function (element) {
+      return RegExp(text).test(element.textContent);
+    });
+  }
+  ```
 
 **[⬆ back to top](#table-of-contents)**
 
@@ -367,11 +400,11 @@ function exampleFilter(elem) {
 
 - [2.1](#2.1) <a name='2.1'></a> CSS
 
-  + Get style
+  - Get style
 
     ```js
     // jQuery
-    $el.css('color');
+    $el.css("color");
 
     // Native
     // NOTE: Known bug, will return 'auto' if style value is 'auto'
@@ -381,66 +414,67 @@ function exampleFilter(elem) {
     win.getComputedStyle(el, null).color;
     ```
 
-  + Set style
+  - Set style
 
     ```js
     // jQuery
-    $el.css({ color: '#f01' });
+    $el.css({ color: "#f01" });
 
     // Native
-    el.style.color = '#f01';
+    el.style.color = "#f01";
     ```
 
-  + Get/Set Styles
+  - Get/Set Styles
 
-    Note that if you want to set multiple styles once, you could refer to [setStyles](https://github.com/oneuijs/oui-dom-utils/blob/master/src/index.js#L194) method in oui-dom-utils package.
+    Note that if you want to set multiple styles once, you could refer to
+    [setStyles](https://github.com/oneuijs/oui-dom-utils/blob/master/src/index.js#L194)
+    method in oui-dom-utils package.
 
+* Add class
 
-  + Add class
+  ```js
+  // jQuery
+  $el.addClass(className);
 
-    ```js
-    // jQuery
-    $el.addClass(className);
+  // Native
+  el.classList.add(className);
+  ```
 
-    // Native
-    el.classList.add(className);
-    ```
+* Remove class
 
-  + Remove class
+  ```js
+  // jQuery
+  $el.removeClass(className);
 
-    ```js
-    // jQuery
-    $el.removeClass(className);
+  // Native
+  el.classList.remove(className);
+  ```
 
-    // Native
-    el.classList.remove(className);
-    ```
+* has class
 
-  + has class
+  ```js
+  // jQuery
+  $el.hasClass(className);
 
-    ```js
-    // jQuery
-    $el.hasClass(className);
+  // Native
+  el.classList.contains(className);
+  ```
 
-    // Native
-    el.classList.contains(className);
-    ```
+* Toggle class
 
-  + Toggle class
+  ```js
+  // jQuery
+  $el.toggleClass(className);
 
-    ```js
-    // jQuery
-    $el.toggleClass(className);
-
-    // Native
-    el.classList.toggle(className);
-    ```
+  // Native
+  el.classList.toggle(className);
+  ```
 
 - [2.2](#2.2) <a name='2.2'></a> Width & Height
 
   Width and Height are theoretically identical, take Height as example:
 
-  + Window height
+  - Window height
 
     ```js
     // window height
@@ -453,7 +487,7 @@ function exampleFilter(elem) {
     window.innerHeight;
     ```
 
-  + Document height
+  - Document height
 
     ```js
     // jQuery
@@ -471,7 +505,7 @@ function exampleFilter(elem) {
     );
     ```
 
-  + Element height
+  - Element height
 
     ```js
     // jQuery
@@ -485,7 +519,9 @@ function exampleFilter(elem) {
       const borderBottomWidth = parseFloat(styles.borderBottomWidth);
       const paddingTop = parseFloat(styles.paddingTop);
       const paddingBottom = parseFloat(styles.paddingBottom);
-      return height - borderBottomWidth - borderTopWidth - paddingTop - paddingBottom;
+      return (
+        height - borderBottomWidth - borderTopWidth - paddingTop - paddingBottom
+      );
     }
 
     // accurate to integer（when `border-box`, it's `height - border`; when `content-box`, it's `height + padding`）
@@ -497,7 +533,7 @@ function exampleFilter(elem) {
 
 - [2.3](#2.3) <a name='2.3'></a> Position & Offset
 
-  + Position
+  - Position
 
     Get the current coordinates of the element relative to the offset parent.
 
@@ -509,7 +545,7 @@ function exampleFilter(elem) {
     { left: el.offsetLeft, top: el.offsetTop }
     ```
 
-  + Offset
+  - Offset
 
     Get the current coordinates of the element relative to the document.
 
@@ -518,12 +554,13 @@ function exampleFilter(elem) {
     $el.offset();
 
     // Native
-    function getOffset (el) {
+    function getOffset(el) {
       const box = el.getBoundingClientRect();
 
       return {
         top: box.top + window.pageYOffset - document.documentElement.clientTop,
-        left: box.left + window.pageXOffset - document.documentElement.clientLeft
+        left:
+          box.left + window.pageXOffset - document.documentElement.clientLeft,
       };
     }
     ```
@@ -537,7 +574,8 @@ function exampleFilter(elem) {
   $(window).scrollTop();
 
   // Native
-  (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+  (document.documentElement && document.documentElement.scrollTop) ||
+    document.body.scrollTop;
   ```
 
 **[⬆ back to top](#table-of-contents)**
@@ -558,7 +596,7 @@ function exampleFilter(elem) {
 
 - [3.2](#3.2) <a name='3.2'></a> Text
 
-  + Get text
+  - Get text
 
     Get the combined text contents of the element including their descendants,
 
@@ -570,7 +608,7 @@ function exampleFilter(elem) {
     el.textContent;
     ```
 
-  + Set text
+  - Set text
 
     Set the content of the element to the specified text.
 
@@ -584,7 +622,7 @@ function exampleFilter(elem) {
 
 - [3.3](#3.3) <a name='3.3'></a> HTML
 
-  + Get HTML
+  - Get HTML
 
     ```js
     // jQuery
@@ -594,7 +632,7 @@ function exampleFilter(elem) {
     el.innerHTML;
     ```
 
-  + Set HTML
+  - Set HTML
 
     ```js
     // jQuery
@@ -613,7 +651,10 @@ function exampleFilter(elem) {
   $parent.append(newEl | '<div id="container">Hello World</div>');
 
   // Native: different syntax
-  parent.insertAdjacentHTML('beforeend', '<div id="container">Hello World</div>');
+  parent.insertAdjacentHTML(
+    "beforeend",
+    '<div id="container">Hello World</div>'
+  );
   parent.appendChild(newEl);
 
   // Native (ES6-way): unified syntax
@@ -627,7 +668,10 @@ function exampleFilter(elem) {
   $parent.prepend(newEl | '<div id="container">Hello World</div>');
 
   // Native: different syntax
-  parent.insertAdjacentHTML('afterbegin', '<div id="container">Hello World</div>');
+  parent.insertAdjacentHTML(
+    "afterbegin",
+    '<div id="container">Hello World</div>'
+  );
   parent.insertBefore(newEl, parent.firstChild);
 
   // Native (ES6-way): unified syntax
@@ -643,7 +687,10 @@ function exampleFilter(elem) {
   $newEl.insertBefore(selector);
 
   // Native (HTML string)
-  el.insertAdjacentHTML('beforebegin ', '<div id="container">Hello World</div>');
+  el.insertAdjacentHTML(
+    "beforebegin ",
+    '<div id="container">Hello World</div>'
+  );
 
   // Native (Element)
   const el = document.querySelector(selector);
@@ -661,7 +708,7 @@ function exampleFilter(elem) {
   $newEl.insertAfter(selector);
 
   // Native (HTML string)
-  el.insertAdjacentHTML('afterend', '<div id="container">Hello World</div>');
+  el.insertAdjacentHTML("afterend", '<div id="container">Hello World</div>');
 
   // Native (Element)
   const el = document.querySelector(selector);
@@ -681,9 +728,11 @@ function exampleFilter(elem) {
   // Native
   el.matches(selector);
   ```
+
 - [3.9](#3.9) <a name='3.9'></a> clone
 
-  Create a deep copy of an element: it copies the matched element as well as all of its descendant elements and text nodes.
+  Create a deep copy of an element: it copies the matched element as well as all
+  of its descendant elements and text nodes.
 
   ```js
   // jQuery. Sets parameter as `true` to indicate that event handlers should be copied along with the element.
@@ -691,7 +740,6 @@ function exampleFilter(elem) {
 
   // Native
   el.cloneNode();
-
   ```
 
 - [3.10](#3.10) <a name='3.10'></a> empty
@@ -712,12 +760,12 @@ function exampleFilter(elem) {
 
   ```js
   // jQuery
-  $('.inner').wrap('<div class="wrapper"></div>');
+  $(".inner").wrap('<div class="wrapper"></div>');
 
   // Native
-  Array.from(document.querySelectorAll('.inner')).forEach((el) => {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'wrapper';
+  Array.from(document.querySelectorAll(".inner")).forEach((el) => {
+    const wrapper = document.createElement("div");
+    wrapper.className = "wrapper";
     el.parentNode.insertBefore(wrapper, el);
     wrapper.appendChild(el);
   });
@@ -729,38 +777,39 @@ function exampleFilter(elem) {
 
   ```js
   // jQuery
-  $('.inner').unwrap();
+  $(".inner").unwrap();
 
   // Native
-  Array.from(document.querySelectorAll('.inner')).forEach((el) => {
+  Array.from(document.querySelectorAll(".inner")).forEach((el) => {
     let elParentNode = el.parentNode;
 
-    if(elParentNode !== document.body) {
-        elParentNode.parentNode.insertBefore(el, elParentNode);
-        elParentNode.parentNode.removeChild(elParentNode);
+    if (elParentNode !== document.body) {
+      elParentNode.parentNode.insertBefore(el, elParentNode);
+      elParentNode.parentNode.removeChild(elParentNode);
     }
   });
   ```
 
 - [3.13](#3.13) <a name='3.13'></a> replaceWith
 
-  Replace each element in the set of matched elements with the provided new content
+  Replace each element in the set of matched elements with the provided new
+  content
 
   ```js
   // jQuery
-  $('.inner').replaceWith('<div class="outer"></div>');
+  $(".inner").replaceWith('<div class="outer"></div>');
 
   // Native (alternative) - latest, Edge17+
-  Array.from(document.querySelectorAll('.inner')).forEach((el) => {
-    const outer = document.createElement('div');
-    outer.className = 'outer';
+  Array.from(document.querySelectorAll(".inner")).forEach((el) => {
+    const outer = document.createElement("div");
+    outer.className = "outer";
     el.replaceWith(outer);
   });
 
   // Native
-  Array.from(document.querySelectorAll('.inner')).forEach((el) => {
-    const outer = document.createElement('div');
-    outer.className = 'outer';
+  Array.from(document.querySelectorAll(".inner")).forEach((el) => {
+    const outer = document.createElement("div");
+    outer.className = "outer";
     el.parentNode.replaceChild(outer, el);
   });
   ```
@@ -794,32 +843,40 @@ function exampleFilter(elem) {
   </ol>`);
   ```
 
-
 **[⬆ back to top](#table-of-contents)**
 
 ## Ajax
 
-[Fetch API](https://fetch.spec.whatwg.org/) is the new standard to replace XMLHttpRequest to do ajax. It works on Chrome and Firefox, you can use polyfills to make it work on legacy browsers.
+[Fetch API](https://fetch.spec.whatwg.org/) is the new standard to replace
+XMLHttpRequest to do ajax. It works on Chrome and Firefox, you can use polyfills
+to make it work on legacy browsers.
 
-Try [github/fetch](http://github.com/github/fetch) on IE9+ or [fetch-ie8](https://github.com/camsong/fetch-ie8/) on IE8+, [fetch-jsonp](https://github.com/camsong/fetch-jsonp) to make JSONP requests.
+Try [github/fetch](http://github.com/github/fetch) on IE9+ or
+[fetch-ie8](https://github.com/camsong/fetch-ie8/) on IE8+,
+[fetch-jsonp](https://github.com/camsong/fetch-jsonp) to make JSONP requests.
 
-- [4.1](#4.1) <a name='4.1'></a> Load data from the server and place the returned HTML into the matched element.
+- [4.1](#4.1) <a name='4.1'></a> Load data from the server and place the
+  returned HTML into the matched element.
 
   ```js
   // jQuery
-  $(selector).load(url, completeCallback)
+  $(selector).load(url, completeCallback);
 
   // Native
-  fetch(url).then(data => data.text()).then(data => {
-    document.querySelector(selector).innerHTML = data
-  }).then(completeCallback)
+  fetch(url)
+    .then((data) => data.text())
+    .then((data) => {
+      document.querySelector(selector).innerHTML = data;
+    })
+    .then(completeCallback);
   ```
 
 **[⬆ back to top](#table-of-contents)**
 
 ## Events
 
-For a complete replacement with namespace and delegation, refer to https://github.com/oneuijs/oui-dom-events
+For a complete replacement with namespace and delegation, refer to
+https://github.com/oneuijs/oui-dom-events
 
 - [5.0](#5.0) <a name='5.0'></a> Document ready by `DOMContentLoaded`
 
@@ -829,10 +886,10 @@ For a complete replacement with namespace and delegation, refer to https://githu
 
   // Native
   // Check if the DOMContentLoaded has already been completed
-  if (document.readyState !== 'loading') {
+  if (document.readyState !== "loading") {
     eventHandler();
   } else {
-    document.addEventListener('DOMContentLoaded', eventHandler);
+    document.addEventListener("DOMContentLoaded", eventHandler);
   }
   ```
 
@@ -860,14 +917,14 @@ For a complete replacement with namespace and delegation, refer to https://githu
 
   ```js
   // jQuery
-  $(el).trigger('custom-event', {key1: 'data'});
+  $(el).trigger("custom-event", { key1: "data" });
 
   // Native
   if (window.CustomEvent) {
-    const event = new CustomEvent('custom-event', {detail: {key1: 'data'}});
+    const event = new CustomEvent("custom-event", { detail: { key1: "data" } });
   } else {
-    const event = document.createEvent('CustomEvent');
-    event.initCustomEvent('custom-event', true, true, {key1: 'data'});
+    const event = document.createEvent("CustomEvent");
+    event.initCustomEvent("custom-event", true, true, { key1: "data" });
   }
 
   el.dispatchEvent(event);
@@ -877,11 +934,14 @@ For a complete replacement with namespace and delegation, refer to https://githu
 
 ## Utilities
 
-Most of jQuery utilities are also found in the native API. Other advanced functions could be chosen from better utilities libraries, focusing on consistency and performance. [Lodash](https://lodash.com) is a recommended replacement.
+Most of jQuery utilities are also found in the native API. Other advanced
+functions could be chosen from better utilities libraries, focusing on
+consistency and performance. [Lodash](https://lodash.com) is a recommended
+replacement.
 
 - [6.1](#6.1) <a name='6.1'></a> Basic utilities
 
-  + isArray
+  - isArray
 
   Determine whether the argument is an array.
 
@@ -893,7 +953,7 @@ Most of jQuery utilities are also found in the native API. Other advanced functi
   Array.isArray(array);
   ```
 
-  + isWindow
+  - isWindow
 
   Determine whether the argument is a window.
 
@@ -907,9 +967,10 @@ Most of jQuery utilities are also found in the native API. Other advanced functi
   }
   ```
 
-  + inArray
+  - inArray
 
-  Search for a specified value within an array and return its index (or -1 if not found).
+  Search for a specified value within an array and return its index (or -1 if
+  not found).
 
   ```js
   // jQuery
@@ -922,10 +983,10 @@ Most of jQuery utilities are also found in the native API. Other advanced functi
   array.includes(item);
   ```
 
-  + isNumeric
+  - isNumeric
 
-  Determine if the argument passed is numerical.
-  Use `typeof` to decide the type or the `type` example for better accuracy.
+  Determine if the argument passed is numerical. Use `typeof` to decide the type
+  or the `type` example for better accuracy.
 
   ```js
   // jQuery
@@ -937,7 +998,7 @@ Most of jQuery utilities are also found in the native API. Other advanced functi
   }
   ```
 
-  + isFunction
+  - isFunction
 
   Determine if the argument passed is a JavaScript function object.
 
@@ -947,15 +1008,17 @@ Most of jQuery utilities are also found in the native API. Other advanced functi
 
   // Native
   function isFunction(item) {
-    if (typeof item === 'function') {
+    if (typeof item === "function") {
       return true;
     }
     var type = Object.prototype.toString.call(item);
-    return type === '[object Function]' || type === '[object GeneratorFunction]';
+    return (
+      type === "[object Function]" || type === "[object GeneratorFunction]"
+    );
   }
   ```
 
-  + isEmptyObject
+  - isEmptyObject
 
   Check to see if an object is empty (contains no enumerable properties).
 
@@ -969,9 +1032,10 @@ Most of jQuery utilities are also found in the native API. Other advanced functi
   }
   ```
 
-  + isPlainObject
+  - isPlainObject
 
-  Check to see if an object is a plain object (created using “{}” or “new Object”).
+  Check to see if an object is a plain object (created using “{}” or “new
+  Object”).
 
   ```js
   // jQuery
@@ -979,12 +1043,21 @@ Most of jQuery utilities are also found in the native API. Other advanced functi
 
   // Native
   function isPlainObject(obj) {
-    if (typeof (obj) !== 'object' || obj.nodeType || obj !== null && obj !== undefined && obj === obj.window) {
+    if (
+      typeof obj !== "object" ||
+      obj.nodeType ||
+      (obj !== null && obj !== undefined && obj === obj.window)
+    ) {
       return false;
     }
 
-    if (obj.constructor &&
-        !Object.prototype.hasOwnProperty.call(obj.constructor.prototype, 'isPrototypeOf')) {
+    if (
+      obj.constructor &&
+      !Object.prototype.hasOwnProperty.call(
+        obj.constructor.prototype,
+        "isPrototypeOf"
+      )
+    ) {
       return false;
     }
 
@@ -992,10 +1065,11 @@ Most of jQuery utilities are also found in the native API. Other advanced functi
   }
   ```
 
-  + extend
+  - extend
 
-  Merge the contents of two or more objects together into a new object, without modifying either argument.
-  object.assign is part of ES6 API, and you could also use a [polyfill](https://github.com/ljharb/object.assign).
+  Merge the contents of two or more objects together into a new object, without
+  modifying either argument. object.assign is part of ES6 API, and you could
+  also use a [polyfill](https://github.com/ljharb/object.assign).
 
   ```js
   // jQuery
@@ -1005,7 +1079,7 @@ Most of jQuery utilities are also found in the native API. Other advanced functi
   Object.assign({}, object1, object2);
   ```
 
-  + trim
+  - trim
 
   Remove the white-space from the beginning and end of a string.
 
@@ -1017,49 +1091,44 @@ Most of jQuery utilities are also found in the native API. Other advanced functi
   string.trim();
   ```
 
-  + map
+  - map
 
   Translate all items in an array or object to new array of items.
 
   ```js
   // jQuery
-  $.map(array, (value, index) => {
-  });
+  $.map(array, (value, index) => {});
 
   // Native
-  array.map((value, index) => {
-  });
+  array.map((value, index) => {});
   ```
 
-  + each
+  - each
 
-  A generic iterator function, which can be used to seamlessly iterate over both objects and arrays.
+  A generic iterator function, which can be used to seamlessly iterate over both
+  objects and arrays.
 
   ```js
   // jQuery
-  $.each(array, (index, value) => {
-  });
+  $.each(array, (index, value) => {});
 
   // Native
-  array.forEach((value, index) => {
-  });
+  array.forEach((value, index) => {});
   ```
 
-  + grep
+  - grep
 
   Finds the elements of an array which satisfy a filter function.
 
   ```js
   // jQuery
-  $.grep(array, (value, index) => {
-  });
+  $.grep(array, (value, index) => {});
 
   // Native
-  array.filter((value, index) => {
-  });
+  array.filter((value, index) => {});
   ```
 
-  + type
+  - type
 
   Determine the internal JavaScript [Class] of an object.
 
@@ -1070,13 +1139,14 @@ Most of jQuery utilities are also found in the native API. Other advanced functi
   // Native
   function type(item) {
     const reTypeOf = /(?:^\[object\s(.*?)\]$)/;
-    return Object.prototype.toString.call(item)
-      .replace(reTypeOf, '$1')
+    return Object.prototype.toString
+      .call(item)
+      .replace(reTypeOf, "$1")
       .toLowerCase();
   }
   ```
 
-  + merge
+  - merge
 
   Merge the contents of two arrays together into the first array.
 
@@ -1086,19 +1156,19 @@ Most of jQuery utilities are also found in the native API. Other advanced functi
 
   // Native, doesn't remove duplicate items
   function merge(...args) {
-    return [].concat(...args)
+    return [].concat(...args);
   }
 
   // ES6-way, doesn't remove duplicate items
-  array1 = [...array1, ...array2]
+  array1 = [...array1, ...array2];
 
   // Set version, does remove duplicate items
   function merge(...args) {
-    return Array.from(new Set([].concat(...args)))
+    return Array.from(new Set([].concat(...args)));
   }
   ```
 
-  + now
+  - now
 
   Return a number representing the current time.
 
@@ -1110,9 +1180,10 @@ Most of jQuery utilities are also found in the native API. Other advanced functi
   Date.now();
   ```
 
-  + proxy
+  - proxy
 
-  Takes a function and returns a new one that will always have a particular context.
+  Takes a function and returns a new one that will always have a particular
+  context.
 
   ```js
   // jQuery
@@ -1162,7 +1233,7 @@ Most of jQuery utilities are also found in the native API. Other advanced functi
 
   // Native
   function Globaleval(code) {
-    const script = document.createElement('script');
+    const script = document.createElement("script");
     script.text = code;
 
     document.head.appendChild(script).parentNode.removeChild(script);
@@ -1174,7 +1245,7 @@ Most of jQuery utilities are also found in the native API. Other advanced functi
 
 - [6.4](#6.4) <a name='6.4'></a> parse
 
-  + parseHTML
+  - parseHTML
 
   Parses a string into an array of DOM nodes.
 
@@ -1188,7 +1259,7 @@ Most of jQuery utilities are also found in the native API. Other advanced functi
 
     // Set the base href for the created document so any parsed elements with URLs
     // are based on the document's URL
-    const base = context.createElement('base');
+    const base = context.createElement("base");
     base.href = document.location.href;
     context.head.appendChild(base);
 
@@ -1196,23 +1267,23 @@ Most of jQuery utilities are also found in the native API. Other advanced functi
     return context.body.children;
   }
   ```
+
 - [6.5](#6.4) <a name='6.5'></a> exists
 
-+ exists
+* exists
 
   Check if an element exists in the DOM
 
   ```js
   // jQuery
-  if ($('selector').length) {
-     // exists
+  if ($("selector").length) {
+    // exists
   }
 
   // Native
-  var element =  document.getElementById('elementId');
-  if (typeof(element) != 'undefined' && element != null)
-  {
-     // exists
+  var element = document.getElementById("elementId");
+  if (typeof element != "undefined" && element != null) {
+    // exists
   }
   ```
 
@@ -1220,23 +1291,28 @@ Most of jQuery utilities are also found in the native API. Other advanced functi
 
 ## Promises
 
-A promise represents the eventual result of an asynchronous operation. jQuery has its own way to handle promises. Native JavaScript implements a thin and minimal API to handle promises according to the [Promises/A+](http://promises-aplus.github.io/promises-spec/) specification.
+A promise represents the eventual result of an asynchronous operation. jQuery
+has its own way to handle promises. Native JavaScript implements a thin and
+minimal API to handle promises according to the
+[Promises/A+](http://promises-aplus.github.io/promises-spec/) specification.
 
 - [7.1](#7.1) <a name='7.1'></a> done, fail, always
 
-  `done` is called when promise is resolved, `fail` is called when promise is rejected, `always` is called when promise is either resolved or rejected.
+  `done` is called when promise is resolved, `fail` is called when promise is
+  rejected, `always` is called when promise is either resolved or rejected.
 
   ```js
   // jQuery
-  $promise.done(doneCallback).fail(failCallback).always(alwaysCallback)
+  $promise.done(doneCallback).fail(failCallback).always(alwaysCallback);
 
   // Native
-  promise.then(doneCallback, failCallback).then(alwaysCallback, alwaysCallback)
+  promise.then(doneCallback, failCallback).then(alwaysCallback, alwaysCallback);
   ```
 
 - [7.2](#7.2) <a name='7.2'></a> when
 
-  `when` is used to handle multiple promises. It will resolve when all promises are resolved, and reject if either one is rejected.
+  `when` is used to handle multiple promises. It will resolve when all promises
+  are resolved, and reject if either one is rejected.
 
   ```js
   // jQuery
@@ -1256,10 +1332,10 @@ A promise represents the eventual result of an asynchronous operation. jQuery ha
   function asyncFunc() {
     const defer = new $.Deferred();
     setTimeout(() => {
-      if(true) {
-        defer.resolve('some_value_computed_asynchronously');
+      if (true) {
+        defer.resolve("some_value_computed_asynchronously");
       } else {
-        defer.reject('failed');
+        defer.reject("failed");
       }
     }, 1000);
 
@@ -1271,9 +1347,9 @@ A promise represents the eventual result of an asynchronous operation. jQuery ha
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (true) {
-          resolve('some_value_computed_asynchronously');
+          resolve("some_value_computed_asynchronously");
         } else {
-          reject('failed');
+          reject("failed");
         }
       }, 1000);
     });
@@ -1297,10 +1373,10 @@ A promise represents the eventual result of an asynchronous operation. jQuery ha
   function asyncFunc() {
     const defer = defer();
     setTimeout(() => {
-      if(true) {
-        defer.resolve('some_value_computed_asynchronously');
+      if (true) {
+        defer.resolve("some_value_computed_asynchronously");
       } else {
-        defer.reject('failed');
+        defer.reject("failed");
       }
     }, 1000);
 
@@ -1321,8 +1397,8 @@ A promise represents the eventual result of an asynchronous operation. jQuery ha
 
   // Native
   // More detail about show method, please refer to https://github.com/oneuijs/oui-dom-utils/blob/master/src/index.js#L363
-  el.style.display = ''|'inline'|'inline-block'|'inline-table'|'block';
-  el.style.display = 'none';
+  el.style.display = "" | "inline" | "inline-block" | "inline-table" | "block";
+  el.style.display = "none";
   ```
 
 - [8.2](#8.2) <a name='8.2'></a> Toggle
@@ -1334,10 +1410,13 @@ A promise represents the eventual result of an asynchronous operation. jQuery ha
   $el.toggle();
 
   // Native
-  if (el.ownerDocument.defaultView.getComputedStyle(el, null).display === 'none') {
-    el.style.display = ''|'inline'|'inline-block'|'inline-table'|'block';
+  if (
+    el.ownerDocument.defaultView.getComputedStyle(el, null).display === "none"
+  ) {
+    el.style.display =
+      "" | "inline" | "inline-block" | "inline-table" | "block";
   } else {
-    el.style.display = 'none';
+    el.style.display = "none";
   }
   ```
 
@@ -1353,14 +1432,14 @@ A promise represents the eventual result of an asynchronous operation. jQuery ha
     if (ms) {
       el.style.transition = `opacity ${ms} ms`;
       el.addEventListener(
-        'transitionend',
-        function(event) {
-          el.style.display = 'none';
+        "transitionend",
+        function (event) {
+          el.style.display = "none";
         },
         false
       );
     }
-    el.style.opacity = '0';
+    el.style.opacity = "0";
   }
 
   // Native fadeIn
@@ -1369,7 +1448,7 @@ A promise represents the eventual result of an asynchronous operation. jQuery ha
 
     if (ms) {
       let opacity = 0;
-      const timer = setInterval(function() {
+      const timer = setInterval(function () {
         opacity += 50 / ms;
         if (opacity >= 1) {
           clearInterval(timer);
@@ -1389,10 +1468,10 @@ A promise represents the eventual result of an asynchronous operation. jQuery ha
 
   ```js
   // jQuery
-  $el.fadeTo('slow',0.15);
+  $el.fadeTo("slow", 0.15);
   // Native
-  el.style.transition = 'opacity 3s'; // assume 'slow' equals 3 seconds
-  el.style.opacity = '0.15';
+  el.style.transition = "opacity 3s"; // assume 'slow' equals 3 seconds
+  el.style.opacity = "0.15";
   ```
 
 - [8.5](#8.5) <a name='8.5'></a> FadeToggle
@@ -1404,12 +1483,12 @@ A promise represents the eventual result of an asynchronous operation. jQuery ha
   $el.fadeToggle();
 
   // Native
-  el.style.transition = 'opacity 3s';
+  el.style.transition = "opacity 3s";
   const { opacity } = el.ownerDocument.defaultView.getComputedStyle(el, null);
-  if (opacity === '1') {
-    el.style.opacity = '0';
+  if (opacity === "1") {
+    el.style.opacity = "0";
   } else {
-    el.style.opacity = '1';
+    el.style.opacity = "1";
   }
   ```
 
@@ -1421,10 +1500,10 @@ A promise represents the eventual result of an asynchronous operation. jQuery ha
   $el.slideDown();
 
   // Native
-  const originHeight = '100px';
-  el.style.transition = 'height 3s';
+  const originHeight = "100px";
+  el.style.transition = "height 3s";
   // slideUp
-  el.style.height = '0px';
+  el.style.height = "0px";
   // slideDown
   el.style.height = originHeight;
   ```
@@ -1438,13 +1517,13 @@ A promise represents the eventual result of an asynchronous operation. jQuery ha
   $el.slideToggle();
 
   // Native
-  const originHeight = '100px';
-  el.style.transition = 'height 3s';
+  const originHeight = "100px";
+  el.style.transition = "height 3s";
   const { height } = el.ownerDocument.defaultView.getComputedStyle(el, null);
   if (parseInt(height, 10) === 0) {
     el.style.height = originHeight;
   } else {
-   el.style.height = '0px';
+    el.style.height = "0px";
   }
   ```
 
@@ -1465,21 +1544,29 @@ A promise represents the eventual result of an asynchronous operation. jQuery ha
 
 ## Alternatives
 
-* [You Might Not Need jQuery](http://youmightnotneedjquery.com/) - Examples of how to do common event, element, ajax etc with plain javascript.
-* [npm-dom](http://github.com/npm-dom) and [webmodules](http://github.com/webmodules) - Organizations you can find individual DOM modules on NPM
+- [You Might Not Need jQuery](http://youmightnotneedjquery.com/) - Examples of
+  how to do common event, element, ajax etc with plain javascript.
+- [npm-dom](http://github.com/npm-dom) and
+  [webmodules](http://github.com/webmodules) - Organizations you can find
+  individual DOM modules on NPM
 
 ## Browser Support
 
-![Chrome][chrome-image] | ![Firefox][firefox-image] | ![IE][ie-image] | ![Opera][opera-image] | ![Safari][safari-image]
---- | --- | --- | --- | --- |
-Latest ✔ | Latest ✔ | 10+ ✔ | Latest ✔ | 6.1+ ✔ |
+| ![Chrome][chrome-image] | ![Firefox][firefox-image] | ![IE][ie-image] | ![Opera][opera-image] | ![Safari][safari-image] |
+| ----------------------- | ------------------------- | --------------- | --------------------- | ----------------------- |
+| Latest ✔                | Latest ✔                  | 10+ ✔           | Latest ✔              | 6.1+ ✔                  |
 
 # License
 
 MIT
 
-[chrome-image]: https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png
-[firefox-image]: https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png
-[ie-image]: https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png
-[opera-image]: https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png
-[safari-image]: https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png
+[chrome-image]:
+  https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png
+[firefox-image]:
+  https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png
+[ie-image]:
+  https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png
+[opera-image]:
+  https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png
+[safari-image]:
+  https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png

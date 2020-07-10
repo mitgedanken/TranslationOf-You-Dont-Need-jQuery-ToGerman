@@ -1,6 +1,9 @@
 ## You (Might) Don't Need jQuery [![Build Status](https://api.travis-ci.org/nefe/You-Dont-Need-jQuery.svg)](https://travis-ci.org/nefe/You-Dont-Need-jQuery)
 
-前端发展很快，现代浏览器原生 API 已经足够好用。我们并不需要为了操作 DOM、Event 等再学习一下 jQuery 的 API。同时由于 React、Angular、Vue 等框架的流行，直接操作 DOM 不再是好的模式，jQuery 使用场景大大减少。本项目总结了大部分 jQuery API 替代的方法，暂时只支持 IE10 以上浏览器。
+前端发展很快，现代浏览器原生 API 已经足够好用。我们并不需要为了操作 DOM、Event
+等再学习一下 jQuery 的 API。同时由于 React、Angular、Vue 等框架的流行，直接操作
+DOM 不再是好的模式，jQuery 使用场景大大减少。本项目总结了大部分 jQuery API 替代
+的方法，暂时只支持 IE10 以上浏览器。
 
 ## 目录
 
@@ -18,110 +21,115 @@
 
 ## Translations
 
-* [한국어](./README.ko-KR.md)
-* [正體中文](./README.zh-TW.md)
-* [简体中文](./README.zh-CN.md)
-* [Bahasa Melayu](./README-my.md)
-* [Bahasa Indonesia](./README-id.md)
-* [Português(PT-BR)](./README.pt-BR.md)
-* [Tiếng Việt Nam](./README-vi.md)
-* [Español](./README-es.md)
-* [Русский](./README-ru.md)
-* [Кыргызча](./README-kg.md)
-* [Türkçe](./README-tr.md)
-* [Italiano](./README-it.md)
-* [Français](./README-fr.md)
-* [日本語](./README-ja.md)
-* [Polski](./README-pl.md)
+- [한국어](./README.ko-KR.md)
+- [正體中文](./README.zh-TW.md)
+- [简体中文](./README.zh-CN.md)
+- [Bahasa Melayu](./README-my.md)
+- [Bahasa Indonesia](./README-id.md)
+- [Português(PT-BR)](./README.pt-BR.md)
+- [Tiếng Việt Nam](./README-vi.md)
+- [Español](./README-es.md)
+- [Русский](./README-ru.md)
+- [Кыргызча](./README-kg.md)
+- [Türkçe](./README-tr.md)
+- [Italiano](./README-it.md)
+- [Français](./README-fr.md)
+- [日本語](./README-ja.md)
+- [Polski](./README-pl.md)
 
 ## Query Selector
 
-常用的 class、id、属性 选择器都可以使用 `document.querySelector` 或 `document.querySelectorAll` 替代。区别是
-* `document.querySelector` 返回第一个匹配的 Element
-* `document.querySelectorAll` 返回所有匹配的 Element 组成的 NodeList。它可以通过 `[].slice.call()` 把它转成 Array
-* 如果匹配不到任何 Element，jQuery 返回空数组 `[]`，但 `document.querySelector` 返回 `null`，注意空指针异常。当找不到时，也可以使用 `||` 设置默认的值，如 `document.querySelectorAll(selector) || []`
+常用的 class、id、属性 选择器都可以使用 `document.querySelector` 或
+`document.querySelectorAll` 替代。区别是
 
-> 注意：`document.querySelector` 和 `document.querySelectorAll` 性能很**差**。如果想提高性能，尽量使用 `document.getElementById`、`document.getElementsByClassName` 或 `document.getElementsByTagName`。
+- `document.querySelector` 返回第一个匹配的 Element
+- `document.querySelectorAll` 返回所有匹配的 Element 组成的 NodeList。它可以通过
+  `[].slice.call()` 把它转成 Array
+- 如果匹配不到任何 Element，jQuery 返回空数组 `[]`，但 `document.querySelector`
+  返回 `null`，注意空指针异常。当找不到时，也可以使用 `||` 设置默认的值，如
+  `document.querySelectorAll(selector) || []`
+
+> 注意：`document.querySelector` 和 `document.querySelectorAll` 性能很**差**。如
+> 果想提高性能，尽量使用
+> `document.getElementById`、`document.getElementsByClassName` 或
+> `document.getElementsByTagName`。
 
 - [1.0](#1.0) <a name='1.0'></a> 选择器查询
 
   ```js
   // jQuery
-  $('selector');
+  $("selector");
 
   // Native
-  document.querySelectorAll('selector');
+  document.querySelectorAll("selector");
   ```
 
 - [1.1](#1.1) <a name='1.1'></a> class 查询
 
   ```js
   // jQuery
-  $('.class');
+  $(".class");
 
   // Native
-  document.querySelectorAll('.class');
+  document.querySelectorAll(".class");
 
   // or
-  document.getElementsByClassName('class');
+  document.getElementsByClassName("class");
   ```
 
 - [1.2](#1.2) <a name='1.2'></a> id 查询
 
   ```js
   // jQuery
-  $('#id');
+  $("#id");
 
   // Native
-  document.querySelector('#id');
+  document.querySelector("#id");
 
   // or
-  document.getElementById('id');
+  document.getElementById("id");
   ```
 
 - [1.3](#1.3) <a name='1.3'></a> 属性查询
 
   ```js
   // jQuery
-  $('a[target=_blank]');
+  $("a[target=_blank]");
 
   // Native
-  document.querySelectorAll('a[target=_blank]');
+  document.querySelectorAll("a[target=_blank]");
   ```
 
 - [1.4](#1.4) <a name='1.4'></a> 后代查询
 
   ```js
   // jQuery
-  $el.find('li');
+  $el.find("li");
 
   // Native
-  el.querySelectorAll('li');
+  el.querySelectorAll("li");
   ```
 
 - [1.5](#1.5) <a name='1.5'></a> 兄弟及上下元素
 
-  + 兄弟元素
+  - 兄弟元素
 
     ```js
     // jQuery
     $el.siblings();
 
     // Native - latest, Edge13+
-    [...el.parentNode.children].filter((child) =>
-      child !== el
-    );
+    [...el.parentNode.children].filter((child) => child !== el);
     // Native (alternative) - latest, Edge13+
-    Array.from(el.parentNode.children).filter((child) =>
-      child !== el
-    );
+    Array.from(el.parentNode.children).filter((child) => child !== el);
     // Native - IE10+
-    Array.prototype.filter.call(el.parentNode.children, (child) =>
-      child !== el
+    Array.prototype.filter.call(
+      el.parentNode.children,
+      (child) => child !== el
     );
     ```
 
-  + 上一个元素
+  - 上一个元素
 
     ```js
     // jQuery
@@ -129,10 +137,9 @@
 
     // Native
     el.previousElementSibling;
-
     ```
 
-  + 下一个元素
+  - 下一个元素
 
     ```js
     // next
@@ -155,7 +162,11 @@
 
   // Native - IE10+
   function closest(el, selector) {
-    const matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
+    const matchesSelector =
+      el.matches ||
+      el.webkitMatchesSelector ||
+      el.mozMatchesSelector ||
+      el.msMatchesSelector;
 
     while (el) {
       if (matchesSelector.call(el, selector)) {
@@ -179,7 +190,11 @@
   // Native
   function parentsUntil(el, selector, filter) {
     const result = [];
-    const matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
+    const matchesSelector =
+      el.matches ||
+      el.webkitMatchesSelector ||
+      el.mozMatchesSelector ||
+      el.msMatchesSelector;
 
     // match start from parent
     el = el.parentElement;
@@ -199,31 +214,34 @@
 
 - [1.8](#1.8) <a name='1.8'></a> Form
 
-  + Input/Textarea
+  - Input/Textarea
 
     ```js
     // jQuery
-    $('#my-input').val();
+    $("#my-input").val();
 
     // Native
-    document.querySelector('#my-input').value;
+    document.querySelector("#my-input").value;
     ```
 
-  + 获取 e.currentTarget 在 `.radio` 中的数组索引
+  - 获取 e.currentTarget 在 `.radio` 中的数组索引
 
     ```js
     // jQuery
-    $('.radio').index(e.currentTarget);
+    $(".radio").index(e.currentTarget);
 
     // Native
-    Array.prototype.indexOf.call(document.querySelectorAll('.radio'), e.currentTarget);
+    Array.prototype.indexOf.call(
+      document.querySelectorAll(".radio"),
+      e.currentTarget
+    );
     ```
 
 - [1.9](#1.9) <a name='1.9'></a> Iframe Contents
 
   jQuery 对象的 iframe `contents()` 返回的是 iframe 内的 `document`
 
-  + Iframe contents
+  - Iframe contents
 
     ```js
     // jQuery
@@ -233,21 +251,21 @@
     iframe.contentDocument;
     ```
 
-  + Iframe Query
+  - Iframe Query
 
     ```js
     // jQuery
-    $iframe.contents().find('.css');
+    $iframe.contents().find(".css");
 
     // Native
-    iframe.contentDocument.querySelectorAll('.css');
+    iframe.contentDocument.querySelectorAll(".css");
     ```
 
 - [1.10](#1.10) <a name='1.10'></a> 获取 body
 
   ```js
   // jQuery
-  $('body');
+  $("body");
 
   // Native
   document.body;
@@ -255,36 +273,37 @@
 
 - [1.11](#1.11) <a name='1.11'></a> 获取或设置属性
 
-  + 获取属性
+  - 获取属性
 
     ```js
     // jQuery
-    $el.attr('foo');
+    $el.attr("foo");
 
     // Native
-    el.getAttribute('foo');
+    el.getAttribute("foo");
     ```
-  + 设置属性
+
+  - 设置属性
 
     ```js
     // jQuery, note that this works in memory without change the DOM
-    $el.attr('foo', 'bar');
+    $el.attr("foo", "bar");
 
     // Native
-    el.setAttribute('foo', 'bar');
+    el.setAttribute("foo", "bar");
     ```
 
-  + 获取 `data-` 属性
+  - 获取 `data-` 属性
 
     ```js
     // jQuery
-    $el.data('foo');
+    $el.data("foo");
 
     // Native (use `getAttribute`)
-    el.getAttribute('data-foo');
+    el.getAttribute("data-foo");
 
     // Native (use `dataset` if only need to support IE 11+)
-    el.dataset['foo'];
+    el.dataset["foo"];
     ```
 
 **[⬆ 回到顶部](#目录)**
@@ -293,7 +312,7 @@
 
 - [2.1](#2.1) <a name='2.1'></a> CSS
 
-  + Get style
+  - Get style
 
     ```js
     // jQuery
@@ -307,21 +326,23 @@
     win.getComputedStyle(el, null).color;
     ```
 
-  + Set style
+  - Set style
 
     ```js
     // jQuery
     $el.css({ color: "#ff0011" });
 
     // Native
-    el.style.color = '#ff0011';
+    el.style.color = "#ff0011";
     ```
 
-  + Get/Set Styles
+  - Get/Set Styles
 
-    注意，如果想一次设置多个 style，可以参考 oui-dom-utils 中 [setStyles](https://github.com/oneuijs/oui-dom-utils/blob/master/src/index.js#L194) 方法
+    注意，如果想一次设置多个 style，可以参考 oui-dom-utils 中
+    [setStyles](https://github.com/oneuijs/oui-dom-utils/blob/master/src/index.js#L194)
+    方法
 
-  + Add class
+  - Add class
 
     ```js
     // jQuery
@@ -331,7 +352,7 @@
     el.classList.add(className);
     ```
 
-  + Remove class
+  - Remove class
 
     ```js
     // jQuery
@@ -341,7 +362,7 @@
     el.classList.remove(className);
     ```
 
-  + has class
+  - has class
 
     ```js
     // jQuery
@@ -351,7 +372,7 @@
     el.classList.contains(className);
     ```
 
-  + Toggle class
+  - Toggle class
 
     ```js
     // jQuery
@@ -365,7 +386,7 @@
 
   Width 与 Height 获取方法相同，下面以 Height 为例：
 
-  + Window height
+  - Window height
 
     ```js
     // window height
@@ -378,7 +399,7 @@
     window.innerHeight;
     ```
 
-  + Document height
+  - Document height
 
     ```js
     // jQuery
@@ -396,7 +417,7 @@
     );
     ```
 
-  + Element height
+  - Element height
 
     ```js
     // jQuery
@@ -410,7 +431,9 @@
       const borderBottomWidth = parseFloat(styles.borderBottomWidth);
       const paddingTop = parseFloat(styles.paddingTop);
       const paddingBottom = parseFloat(styles.paddingBottom);
-      return height - borderBottomWidth - borderTopWidth - paddingTop - paddingBottom;
+      return (
+        height - borderBottomWidth - borderTopWidth - paddingTop - paddingBottom
+      );
     }
 
     // 精确到整数（border-box 时为 height - border 值，content-box 时为 height + padding 值）
@@ -422,7 +445,7 @@
 
 - [2.3](#2.3) <a name='2.3'></a> Position & Offset
 
-  + Position
+  - Position
 
     获得匹配元素相对父元素的偏移
 
@@ -434,7 +457,7 @@
     { left: el.offsetLeft, top: el.offsetTop }
     ```
 
-  + Offset
+  - Offset
 
     获得匹配元素相对文档的偏移
 
@@ -443,28 +466,29 @@
     $el.offset();
 
     // Native
-    function getOffset (el) {
+    function getOffset(el) {
       const box = el.getBoundingClientRect();
 
       return {
         top: box.top + window.pageYOffset - document.documentElement.clientTop,
-        left: box.left + window.pageXOffset - document.documentElement.clientLeft
-      }
+        left:
+          box.left + window.pageXOffset - document.documentElement.clientLeft,
+      };
     }
     ```
 
 - [2.4](#2.4) <a name='2.4'></a> Scroll Top
 
+获取元素滚动条垂直位置。
 
-  获取元素滚动条垂直位置。
+```js
+// jQuery
+$(window).scrollTop();
 
-  ```js
-  // jQuery
-  $(window).scrollTop();
-
-  // Native
-  (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
-  ```
+// Native
+(document.documentElement && document.documentElement.scrollTop) ||
+  document.body.scrollTop;
+```
 
 **[⬆ 回到顶部](#目录)**
 
@@ -487,7 +511,7 @@
 
 - [3.2](#3.2) <a name='3.2'></a> Text
 
-  + Get text
+  - Get text
 
     返回指定元素及其后代的文本内容。
 
@@ -499,7 +523,7 @@
     el.textContent;
     ```
 
-  + Set text
+  - Set text
 
     设置元素的文本内容。
 
@@ -513,7 +537,7 @@
 
 - [3.3](#3.3) <a name='3.3'></a> HTML
 
-  + Get HTML
+  - Get HTML
 
     ```js
     // jQuery
@@ -523,7 +547,7 @@
     el.innerHTML;
     ```
 
-  + Set HTML
+  - Set HTML
 
     ```js
     // jQuery
@@ -542,7 +566,7 @@
   $el.append("<div id='container'>hello</div>");
 
   // Native (HTML string)
-  el.insertAdjacentHTML('beforeend', '<div id="container">Hello World</div>');
+  el.insertAdjacentHTML("beforeend", '<div id="container">Hello World</div>');
 
   // Native (Element)
   el.appendChild(newEl);
@@ -555,7 +579,7 @@
   $el.prepend("<div id='container'>hello</div>");
 
   // Native (HTML string)
-  el.insertAdjacentHTML('afterbegin', '<div id="container">Hello World</div>');
+  el.insertAdjacentHTML("afterbegin", '<div id="container">Hello World</div>');
 
   // Native (Element)
   el.insertBefore(newEl, el.firstChild);
@@ -570,7 +594,10 @@
   $newEl.insertBefore(queryString);
 
   // Native (HTML string)
-  el.insertAdjacentHTML('beforebegin ', '<div id="container">Hello World</div>');
+  el.insertAdjacentHTML(
+    "beforebegin ",
+    '<div id="container">Hello World</div>'
+  );
 
   // Native (Element)
   const el = document.querySelector(selector);
@@ -588,7 +615,7 @@
   $newEl.insertAfter(queryString);
 
   // Native (HTML string)
-  el.insertAdjacentHTML('afterend', '<div id="container">Hello World</div>');
+  el.insertAdjacentHTML("afterend", '<div id="container">Hello World</div>');
 
   // Native (Element)
   const el = document.querySelector(selector);
@@ -599,15 +626,15 @@
 
 - [3.8](#3.8) <a name='3.8'></a> is
 
-  如果匹配给定的选择器，返回true
+  如果匹配给定的选择器，返回 true
 
-    ```js
-    // jQuery
-    $el.is(selector);
+  ```js
+  // jQuery
+  $el.is(selector);
 
-    // Native
-    el.matches(selector);
-    ```
+  // Native
+  el.matches(selector);
+  ```
 
 - [3.9](#3.9) <a name='3.9'></a> clone
 
@@ -631,21 +658,21 @@
   $el.empty();
 
   //Native
-  el.innerHTML = '';
+  el.innerHTML = "";
   ```
 
 - [3.11](#3.11) <a name='3.11'></a> wrap
 
-  把每个被选元素放置在指定的HTML结构中。
+  把每个被选元素放置在指定的 HTML 结构中。
 
   ```js
   //jQuery
   $(".inner").wrap('<div class="wrapper"></div>');
 
   //Native
-  Array.prototype.forEach.call(document.querySelector('.inner'), (el) => {
-    const wrapper = document.createElement('div');
-    wrapper.className = 'wrapper';
+  Array.prototype.forEach.call(document.querySelector(".inner"), (el) => {
+    const wrapper = document.createElement("div");
+    wrapper.className = "wrapper";
     el.parentNode.insertBefore(wrapper, el);
     el.parentNode.removeChild(el);
     wrapper.appendChild(el);
@@ -654,20 +681,20 @@
 
 - [3.12](#3.12) <a name="3.12"></a> unwrap
 
-  移除被选元素的父元素的DOM结构
+  移除被选元素的父元素的 DOM 结构
 
   ```js
   // jQuery
-  $('.inner').unwrap();
+  $(".inner").unwrap();
 
   // Native
-  Array.prototype.forEach.call(document.querySelectorAll('.inner'), (el) => {
-        let elParentNode = el.parentNode
+  Array.prototype.forEach.call(document.querySelectorAll(".inner"), (el) => {
+    let elParentNode = el.parentNode;
 
-        if(elParentNode !== document.body) {
-            elParentNode.parentNode.insertBefore(el, elParentNode)
-            elParentNode.parentNode.removeChild(elParentNode)
-        }
+    if (elParentNode !== document.body) {
+      elParentNode.parentNode.insertBefore(el, elParentNode);
+      elParentNode.parentNode.removeChild(elParentNode);
+    }
   });
   ```
 
@@ -677,10 +704,10 @@
 
   ```js
   //jQuery
-  $('.inner').replaceWith('<div class="outer"></div>');
+  $(".inner").replaceWith('<div class="outer"></div>');
 
   //Native
-  Array.prototype.forEach.call(document.querySelectorAll('.inner'),(el) => {
+  Array.prototype.forEach.call(document.querySelectorAll(".inner"), (el) => {
     const outer = document.createElement("div");
     outer.className = "outer";
     el.parentNode.insertBefore(outer, el);
@@ -721,20 +748,26 @@
 
 ## Ajax
 
-[Fetch API](https://fetch.spec.whatwg.org/) 是用于替换 XMLHttpRequest 处理 ajax 的新标准，Chrome 和 Firefox 均支持，旧浏览器可以使用 polyfills 提供支持。
+[Fetch API](https://fetch.spec.whatwg.org/) 是用于替换 XMLHttpRequest 处理 ajax
+的新标准，Chrome 和 Firefox 均支持，旧浏览器可以使用 polyfills 提供支持。
 
-IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [fetch-ie8](https://github.com/camsong/fetch-ie8/)，JSONP 请使用 [fetch-jsonp](https://github.com/camsong/fetch-jsonp)。
+IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用
+[fetch-ie8](https://github.com/camsong/fetch-ie8/)，JSONP 请使用
+[fetch-jsonp](https://github.com/camsong/fetch-jsonp)。
 
 - [4.1](#4.1) <a name='4.1'></a> 从服务器读取数据并替换匹配元素的内容。
 
   ```js
   // jQuery
-  $(selector).load(url, completeCallback)
+  $(selector).load(url, completeCallback);
 
   // Native
-  fetch(url).then(data => data.text()).then(data => {
-    document.querySelector(selector).innerHTML = data
-  }).then(completeCallback)
+  fetch(url)
+    .then((data) => data.text())
+    .then((data) => {
+      document.querySelector(selector).innerHTML = data;
+    })
+    .then(completeCallback);
   ```
 
 **[⬆ 回到顶部](#目录)**
@@ -751,10 +784,10 @@ IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [
 
   // Native
   // 检测 DOMContentLoaded 是否已完成
-  if (document.readyState !== 'loading') {
+  if (document.readyState !== "loading") {
     eventHandler();
   } else {
-    document.addEventListener('DOMContentLoaded', eventHandler);
+    document.addEventListener("DOMContentLoaded", eventHandler);
   }
   ```
 
@@ -782,14 +815,14 @@ IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [
 
   ```js
   // jQuery
-  $(el).trigger('custom-event', {key1: 'data'});
+  $(el).trigger("custom-event", { key1: "data" });
 
   // Native
   if (window.CustomEvent) {
-    const event = new CustomEvent('custom-event', {detail: {key1: 'data'}});
+    const event = new CustomEvent("custom-event", { detail: { key1: "data" } });
   } else {
-    const event = document.createEvent('CustomEvent');
-    event.initCustomEvent('custom-event', true, true, {key1: 'data'});
+    const event = document.createEvent("CustomEvent");
+    event.initCustomEvent("custom-event", true, true, { key1: "data" });
   }
 
   el.dispatchEvent(event);
@@ -799,11 +832,12 @@ IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [
 
 ## Utilities
 
-大部分实用工具都能在 native API 中找到. 其他高级功能可以选用专注于该领域的稳定性和性能都更好的库来代替，推荐 [lodash](https://lodash.com)。
+大部分实用工具都能在 native API 中找到. 其他高级功能可以选用专注于该领域的稳定性
+和性能都更好的库来代替，推荐 [lodash](https://lodash.com)。
 
 - [6.1](#6.1) <a name='6.1'></a> 基本工具
 
-  + isArray
+  - isArray
 
   检测参数是不是数组。
 
@@ -815,7 +849,7 @@ IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [
   Array.isArray(range);
   ```
 
-  + isWindow
+  - isWindow
 
   检测参数是不是 window。
 
@@ -829,7 +863,7 @@ IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [
   }
   ```
 
-  + inArray
+  - inArray
 
   在数组中搜索指定值并返回索引 (找不到则返回 -1)。
 
@@ -844,10 +878,10 @@ IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [
   array.includes(item);
   ```
 
-  + isNumeric
+  - isNumeric
 
-  检测传入的参数是不是数字。
-  Use `typeof` to decide the type or the `type` example for better accuracy.
+  检测传入的参数是不是数字。 Use `typeof` to decide the type or the `type`
+  example for better accuracy.
 
   ```js
   // jQuery
@@ -859,7 +893,7 @@ IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [
   }
   ```
 
-  + isFunction
+  - isFunction
 
   检测传入的参数是不是 JavaScript 函数对象。
 
@@ -869,15 +903,17 @@ IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [
 
   // Native
   function isFunction(item) {
-    if (typeof item === 'function') {
+    if (typeof item === "function") {
       return true;
     }
     var type = Object.prototype.toString(item);
-    return type === '[object Function]' || type === '[object GeneratorFunction]';
+    return (
+      type === "[object Function]" || type === "[object GeneratorFunction]"
+    );
   }
   ```
 
-  + isEmptyObject
+  - isEmptyObject
 
   检测对象是否为空 (包括不可枚举属性).
 
@@ -891,7 +927,7 @@ IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [
   }
   ```
 
-  + isPlainObject
+  - isPlainObject
 
   检测是不是扁平对象 (使用 “{}” 或 “new Object” 创建).
 
@@ -901,12 +937,21 @@ IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [
 
   // Native
   function isPlainObject(obj) {
-    if (typeof (obj) !== 'object' || obj.nodeType || obj !== null && obj !== undefined && obj === obj.window) {
+    if (
+      typeof obj !== "object" ||
+      obj.nodeType ||
+      (obj !== null && obj !== undefined && obj === obj.window)
+    ) {
       return false;
     }
 
-    if (obj.constructor &&
-        !Object.prototype.hasOwnProperty.call(obj.constructor.prototype, 'isPrototypeOf')) {
+    if (
+      obj.constructor &&
+      !Object.prototype.hasOwnProperty.call(
+        obj.constructor.prototype,
+        "isPrototypeOf"
+      )
+    ) {
       return false;
     }
 
@@ -914,10 +959,10 @@ IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [
   }
   ```
 
-  + extend
+  - extend
 
-  合并多个对象的内容到第一个对象。
-  object.assign 是 ES6 API，也可以使用 [polyfill](https://github.com/ljharb/object.assign)。
+  合并多个对象的内容到第一个对象。 object.assign 是 ES6 API，也可以使用
+  [polyfill](https://github.com/ljharb/object.assign)。
 
   ```js
   // jQuery
@@ -927,7 +972,7 @@ IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [
   Object.assign({}, defaultOpts, opts);
   ```
 
-  + trim
+  - trim
 
   移除字符串头尾空白。
 
@@ -939,49 +984,43 @@ IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [
   string.trim();
   ```
 
-  + map
+  - map
 
   将数组或对象转化为包含新内容的数组。
 
   ```js
   // jQuery
-  $.map(array, (value, index) => {
-  });
+  $.map(array, (value, index) => {});
 
   // Native
-  array.map((value, index) => {
-  });
+  array.map((value, index) => {});
   ```
 
-  + each
+  - each
 
   轮询函数，可用于平滑的轮询对象和数组。
 
   ```js
   // jQuery
-  $.each(array, (index, value) => {
-  });
+  $.each(array, (index, value) => {});
 
   // Native
-  array.forEach((value, index) => {
-  });
+  array.forEach((value, index) => {});
   ```
 
-  + grep
+  - grep
 
   找到数组中符合过滤函数的元素。
 
   ```js
   // jQuery
-  $.grep(array, (value, index) => {
-  });
+  $.grep(array, (value, index) => {});
 
   // Native
-  array.filter((value, index) => {
-  });
+  array.filter((value, index) => {});
   ```
 
-  + type
+  - type
 
   检测对象的 JavaScript [Class] 内部类型。
 
@@ -992,13 +1031,14 @@ IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [
   // Native
   function type(item) {
     const reTypeOf = /(?:^\[object\s(.*?)\]$)/;
-    return Object.prototype.toString.call(item)
-      .replace(reTypeOf, '$1')
+    return Object.prototype.toString
+      .call(item)
+      .replace(reTypeOf, "$1")
       .toLowerCase();
   }
   ```
 
-  + merge
+  - merge
 
   合并第二个数组内容到第一个数组。
 
@@ -1009,19 +1049,19 @@ IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [
   // Native
   // 使用 concat，不能去除重复值
   function merge(...args) {
-    return [].concat(...args)
+    return [].concat(...args);
   }
 
   // ES6，同样不能去除重复值
-  array1 = [...array1, ...array2]
+  array1 = [...array1, ...array2];
 
   // 使用 Set，可以去除重复值
   function merge(...args) {
-    return Array.from(new Set([].concat(...args)))
+    return Array.from(new Set([].concat(...args)));
   }
   ```
 
-  + now
+  - now
 
   返回当前时间的数字呈现。
 
@@ -1033,7 +1073,7 @@ IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [
   Date.now();
   ```
 
-  + proxy
+  - proxy
 
   传入函数并返回一个新函数，该函数绑定指定上下文。
 
@@ -1045,7 +1085,7 @@ IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [
   fn.bind(context);
   ```
 
-  + makeArray
+  - makeArray
 
   类数组对象转化为真正的 JavaScript 数组。
 
@@ -1082,7 +1122,7 @@ IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [
 
   // Native
   function Globaleval(code) {
-    const script = document.createElement('script');
+    const script = document.createElement("script");
     script.text = code;
 
     document.head.appendChild(script).parentNode.removeChild(script);
@@ -1094,7 +1134,7 @@ IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [
 
 - [6.4](#6.4) <a name='6.4'></a> 解析
 
-  + parseHTML
+  - parseHTML
 
   解析字符串为 DOM 节点数组.
 
@@ -1108,7 +1148,7 @@ IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [
 
     // Set the base href for the created document so any parsed elements with URLs
     // are based on the document's URL
-    const base = context.createElement('base');
+    const base = context.createElement("base");
     base.href = document.location.href;
     context.head.appendChild(base);
 
@@ -1117,7 +1157,7 @@ IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [
   }
   ```
 
-  + parseJSON
+  - parseJSON
 
   传入格式正确的 JSON 字符串并返回 JavaScript 值.
 
@@ -1133,23 +1173,27 @@ IE9+ 请使用 [github/fetch](http://github.com/github/fetch)，IE8+ 请使用 [
 
 ## Promises
 
-Promise 代表异步操作的最终结果。jQuery 用它自己的方式处理 promises，原生 JavaScript 遵循 [Promises/A+](http://promises-aplus.github.io/promises-spec/) 标准实现了最小 API 来处理 promises。
+Promise 代表异步操作的最终结果。jQuery 用它自己的方式处理 promises，原生
+JavaScript 遵循 [Promises/A+](http://promises-aplus.github.io/promises-spec/) 标
+准实现了最小 API 来处理 promises。
 
 - [7.1](#7.1) <a name='7.1'></a> done, fail, always
 
-  `done` 会在 promise 解决时调用，`fail` 会在 promise 拒绝时调用，`always` 总会调用。
+  `done` 会在 promise 解决时调用，`fail` 会在 promise 拒绝时调用，`always` 总会
+  调用。
 
   ```js
   // jQuery
-  $promise.done(doneCallback).fail(failCallback).always(alwaysCallback)
+  $promise.done(doneCallback).fail(failCallback).always(alwaysCallback);
 
   // Native
-  promise.then(doneCallback, failCallback).then(alwaysCallback, alwaysCallback)
+  promise.then(doneCallback, failCallback).then(alwaysCallback, alwaysCallback);
   ```
 
 - [7.2](#7.2) <a name='7.2'></a> when
 
-  `when` 用于处理多个 promises。当全部 promises 被解决时返回，当任一 promise 被拒绝时拒绝。
+  `when` 用于处理多个 promises。当全部 promises 被解决时返回，当任一 promise 被
+  拒绝时拒绝。
 
   ```js
   // jQuery
@@ -1169,10 +1213,10 @@ Promise 代表异步操作的最终结果。jQuery 用它自己的方式处理 p
   function asyncFunc() {
     const defer = new $.Deferred();
     setTimeout(() => {
-      if(true) {
-        defer.resolve('some_value_computed_asynchronously');
+      if (true) {
+        defer.resolve("some_value_computed_asynchronously");
       } else {
-        defer.reject('failed');
+        defer.reject("failed");
       }
     }, 1000);
 
@@ -1184,9 +1228,9 @@ Promise 代表异步操作的最终结果。jQuery 用它自己的方式处理 p
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (true) {
-          resolve('some_value_computed_asynchronously');
+          resolve("some_value_computed_asynchronously");
         } else {
-          reject('failed');
+          reject("failed");
         }
       }, 1000);
     });
@@ -1210,10 +1254,10 @@ Promise 代表异步操作的最终结果。jQuery 用它自己的方式处理 p
   function asyncFunc() {
     const defer = defer();
     setTimeout(() => {
-      if(true) {
-        defer.resolve('some_value_computed_asynchronously');
+      if (true) {
+        defer.resolve("some_value_computed_asynchronously");
       } else {
-        defer.reject('failed');
+        defer.reject("failed");
       }
     }, 1000);
 
@@ -1234,8 +1278,8 @@ Promise 代表异步操作的最终结果。jQuery 用它自己的方式处理 p
 
   // Native
   // 更多 show 方法的细节详见 https://github.com/oneuijs/oui-dom-utils/blob/master/src/index.js#L363
-  el.style.display = ''|'inline'|'inline-block'|'inline-table'|'block';
-  el.style.display = 'none';
+  el.style.display = "" | "inline" | "inline-block" | "inline-table" | "block";
+  el.style.display = "none";
   ```
 
 - [8.2](#8.2) <a name='8.2'></a> Toggle
@@ -1247,10 +1291,13 @@ Promise 代表异步操作的最终结果。jQuery 用它自己的方式处理 p
   $el.toggle();
 
   // Native
-  if (el.ownerDocument.defaultView.getComputedStyle(el, null).display === 'none') {
-    el.style.display = ''|'inline'|'inline-block'|'inline-table'|'block';
+  if (
+    el.ownerDocument.defaultView.getComputedStyle(el, null).display === "none"
+  ) {
+    el.style.display =
+      "" | "inline" | "inline-block" | "inline-table" | "block";
   } else {
-    el.style.display = 'none';
+    el.style.display = "none";
   }
   ```
 
@@ -1262,11 +1309,11 @@ Promise 代表异步操作的最终结果。jQuery 用它自己的方式处理 p
   $el.fadeOut(3000);
 
   // Native
-  el.style.transition = 'opacity 3s';
+  el.style.transition = "opacity 3s";
   // fadeIn
-  el.style.opacity = '1';
+  el.style.opacity = "1";
   // fadeOut
-  el.style.opacity = '0';
+  el.style.opacity = "0";
   ```
 
 - [8.4](#8.4) <a name='8.4'></a> FadeTo
@@ -1275,10 +1322,10 @@ Promise 代表异步操作的最终结果。jQuery 用它自己的方式处理 p
 
   ```js
   // jQuery
-  $el.fadeTo('slow',0.15);
+  $el.fadeTo("slow", 0.15);
   // Native
-  el.style.transition = 'opacity 3s'; // 假设 'slow' 等于 3 秒
-  el.style.opacity = '0.15';
+  el.style.transition = "opacity 3s"; // 假设 'slow' 等于 3 秒
+  el.style.opacity = "0.15";
   ```
 
 - [8.5](#8.5) <a name='8.5'></a> FadeToggle
@@ -1290,12 +1337,12 @@ Promise 代表异步操作的最终结果。jQuery 用它自己的方式处理 p
   $el.fadeToggle();
 
   // Native
-  el.style.transition = 'opacity 3s';
+  el.style.transition = "opacity 3s";
   const { opacity } = el.ownerDocument.defaultView.getComputedStyle(el, null);
-  if (opacity === '1') {
-    el.style.opacity = '0';
+  if (opacity === "1") {
+    el.style.opacity = "0";
   } else {
-    el.style.opacity = '1';
+    el.style.opacity = "1";
   }
   ```
 
@@ -1307,10 +1354,10 @@ Promise 代表异步操作的最终结果。jQuery 用它自己的方式处理 p
   $el.slideDown();
 
   // Native
-  const originHeight = '100px';
-  el.style.transition = 'height 3s';
+  const originHeight = "100px";
+  el.style.transition = "height 3s";
   // slideUp
-  el.style.height = '0px';
+  el.style.height = "0px";
   // slideDown
   el.style.height = originHeight;
   ```
@@ -1324,14 +1371,13 @@ Promise 代表异步操作的最终结果。jQuery 用它自己的方式处理 p
   $el.slideToggle();
 
   // Native
-  const originHeight = '100px';
-  el.style.transition = 'height 3s';
+  const originHeight = "100px";
+  el.style.transition = "height 3s";
   const { height } = el.ownerDocument.defaultView.getComputedStyle(el, null);
   if (parseInt(height, 10) === 0) {
     el.style.height = originHeight;
-  }
-  else {
-   el.style.height = '0px';
+  } else {
+    el.style.height = "0px";
   }
   ```
 
@@ -1354,21 +1400,28 @@ Promise 代表异步操作的最终结果。jQuery 用它自己的方式处理 p
 
 ## Alternatives
 
-* [你可能不需要 jQuery (You Might Not Need jQuery)](http://youmightnotneedjquery.com/) - 如何使用原生 JavaScript 实现通用事件，元素，ajax 等用法。
-* [npm-dom](http://github.com/npm-dom) 以及 [webmodules](http://github.com/webmodules) - 在 NPM 上提供独立 DOM 模块的组织
+- [你可能不需要 jQuery (You Might Not Need jQuery)](http://youmightnotneedjquery.com/) -
+  如何使用原生 JavaScript 实现通用事件，元素，ajax 等用法。
+- [npm-dom](http://github.com/npm-dom) 以及
+  [webmodules](http://github.com/webmodules) - 在 NPM 上提供独立 DOM 模块的组织
 
 ## Browser Support
 
-![Chrome][chrome-image] | ![Firefox][firefox-image] | ![IE][ie-image] | ![Opera][opera-image] | ![Safari][safari-image]
---- | --- | --- | --- | --- |
-Latest ✔ | Latest ✔ | 10+ ✔ | Latest ✔ | 6.1+ ✔ |
+| ![Chrome][chrome-image] | ![Firefox][firefox-image] | ![IE][ie-image] | ![Opera][opera-image] | ![Safari][safari-image] |
+| ----------------------- | ------------------------- | --------------- | --------------------- | ----------------------- |
+| Latest ✔                | Latest ✔                  | 10+ ✔           | Latest ✔              | 6.1+ ✔                  |
 
 # License
 
 MIT
 
-[chrome-image]: https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png
-[firefox-image]: https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png
-[ie-image]: https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png
-[opera-image]: https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png
-[safari-image]: https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png
+[chrome-image]:
+  https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png
+[firefox-image]:
+  https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png
+[ie-image]:
+  https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png
+[opera-image]:
+  https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png
+[safari-image]:
+  https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png

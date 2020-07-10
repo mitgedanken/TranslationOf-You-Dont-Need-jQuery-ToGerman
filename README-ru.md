@@ -1,6 +1,12 @@
 ## Вам не нужен jQuery
 
-В наше время среда front-end разработки быстро развивается, и современные браузеры достаточно хорошо реализовали работу с DOM/BOM API. Вам не нужно изучать jQuery с нуля для манипуляцией DOM'ом или объектами событий. В то же время, благодаря лидирующим front-end библиотекам, таким как React, Angular и Vue, манипуляция DOM'ом напрямую становится антипаттерном, а jQuery теряет свою значимость. Этот проект объединяет большинство альтернативных методов jQuery в нативном исполнении с поддержкой IE 10+.
+В наше время среда front-end разработки быстро развивается, и современные
+браузеры достаточно хорошо реализовали работу с DOM/BOM API. Вам не нужно
+изучать jQuery с нуля для манипуляцией DOM'ом или объектами событий. В то же
+время, благодаря лидирующим front-end библиотекам, таким как React, Angular и
+Vue, манипуляция DOM'ом напрямую становится антипаттерном, а jQuery теряет свою
+значимость. Этот проект объединяет большинство альтернативных методов jQuery в
+нативном исполнении с поддержкой IE 10+.
 
 ## Содержание
 
@@ -16,102 +22,112 @@
 
 ## Переводы
 
-* [한국어](./README.ko-KR.md)
-* [正體中文](./README.zh-TW.md)
-* [简体中文](./README.zh-CN.md)
-* [Bahasa Melayu](./README-my.md)
-* [Bahasa Indonesia](./README-id.md)
-* [Português(PT-BR)](./README.pt-BR.md)
-* [Tiếng Việt Nam](./README-vi.md)
-* [Español](./README-es.md)
-* [Русский](./README-ru.md)
-* [Кыргызча](./README-kg.md)
-* [Türkçe](./README-tr.md)
-* [Italiano](./README-it.md)
-* [Français](./README-fr.md)
-* [日本語](./README-ja.md)
-* [Polski](./README-pl.md)
+- [한국어](./README.ko-KR.md)
+- [正體中文](./README.zh-TW.md)
+- [简体中文](./README.zh-CN.md)
+- [Bahasa Melayu](./README-my.md)
+- [Bahasa Indonesia](./README-id.md)
+- [Português(PT-BR)](./README.pt-BR.md)
+- [Tiếng Việt Nam](./README-vi.md)
+- [Español](./README-es.md)
+- [Русский](./README-ru.md)
+- [Кыргызча](./README-kg.md)
+- [Türkçe](./README-tr.md)
+- [Italiano](./README-it.md)
+- [Français](./README-fr.md)
+- [日本語](./README-ja.md)
+- [Polski](./README-pl.md)
 
 ## Query Selector
 
-Для часто используемых селекторов, таких как class, id или attribute мы можем использовать `document.querySelector` или `document.querySelectorAll` для замены. Разница такова:
-* `document.querySelector` возвращает первый совпавший элемент
-* `document.querySelectorAll` возвращает все совпавшие элементы как список узлов (NodeList). Его можно конвертировать в массив, используя `Array.prototype.slice.call(document.querySelectorAll(selector));`
-* Если никакие элементы не совпадут, jQuery и `document.querySelectorAll` вернет `[]` где `document.querySelector` вернет `null`.
+Для часто используемых селекторов, таких как class, id или attribute мы можем
+использовать `document.querySelector` или `document.querySelectorAll` для
+замены. Разница такова:
 
-> Заметка: `document.querySelector` и `document.querySelectorAll` достаточно **МЕДЛЕННЫ**, старайтесь использовать `getElementById`, `document.getElementsByClassName` или `document.getElementsByTagName` если хотите улучшить производительность.
+- `document.querySelector` возвращает первый совпавший элемент
+- `document.querySelectorAll` возвращает все совпавшие элементы как список узлов
+  (NodeList). Его можно конвертировать в массив, используя
+  `Array.prototype.slice.call(document.querySelectorAll(selector));`
+- Если никакие элементы не совпадут, jQuery и `document.querySelectorAll` вернет
+  `[]` где `document.querySelector` вернет `null`.
+
+> Заметка: `document.querySelector` и `document.querySelectorAll` достаточно
+> **МЕДЛЕННЫ**, старайтесь использовать `getElementById`,
+> `document.getElementsByClassName` или `document.getElementsByTagName` если
+> хотите улучшить производительность.
 
 - [1.0](#1.0) <a name='1.0'></a> Query by selector
 
   ```js
   // jQuery
-  $('selector');
+  $("selector");
 
   // Нативно
-  document.querySelectorAll('selector');
+  document.querySelectorAll("selector");
   ```
 
 - [1.1](#1.1) <a name='1.1'></a> Запрос по классу
 
   ```js
   // jQuery
-  $('.class');
+  $(".class");
 
   // Нативно
-  document.querySelectorAll('.class');
+  document.querySelectorAll(".class");
 
   // или
-  document.getElementsByClassName('class');
+  document.getElementsByClassName("class");
   ```
 
 - [1.2](#1.2) <a name='1.2'></a> Запрос по ID
 
   ```js
   // jQuery
-  $('#id');
+  $("#id");
 
   // Нативно
-  document.querySelector('#id');
+  document.querySelector("#id");
 
   // или
-  document.getElementById('id');
+  document.getElementById("id");
   ```
 
 - [1.3](#1.3) <a name='1.3'></a> Запрос по атрибуту
 
   ```js
   // jQuery
-  $('a[target=_blank]');
+  $("a[target=_blank]");
 
   // Нативно
-  document.querySelectorAll('a[target=_blank]');
+  document.querySelectorAll("a[target=_blank]");
   ```
 
 - [1.4](#1.4) <a name='1.4'></a> Найти среди потомков
 
   ```js
   // jQuery
-  $el.find('li');
+  $el.find("li");
 
   // Нативно
-  el.querySelectorAll('li');
+  el.querySelectorAll("li");
   ```
 
 - [1.5](#1.5) <a name='1.5'></a> Родственные/Предыдущие/Следующие Элементы
 
-  + Родственные элементы
+  - Родственные элементы
 
     ```js
     // jQuery
     $el.siblings();
 
     // Нативно
-    Array.prototype.filter.call(el.parentNode.children, (child) =>
-      child !== el
+    Array.prototype.filter.call(
+      el.parentNode.children,
+      (child) => child !== el
     );
     ```
 
-  + Предыдущие элементы
+  - Предыдущие элементы
 
     ```js
     // jQuery
@@ -121,7 +137,7 @@
     el.previousElementSibling;
     ```
 
-  + Следующие элементы
+  - Следующие элементы
 
     ```js
     // jQuery
@@ -133,7 +149,8 @@
 
 - [1.6](#1.6) <a name='1.6'></a> Ближайший
 
-  Возвращает первый совпавший элемент по предоставленному селектору, проходя от текущего элемента до документа.
+  Возвращает первый совпавший элемент по предоставленному селектору, проходя от
+  текущего элемента до документа.
 
   ```js
   // jQuery
@@ -144,7 +161,11 @@
 
   // Нативно - IE10+
   function closest(el, selector) {
-    const matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
+    const matchesSelector =
+      el.matches ||
+      el.webkitMatchesSelector ||
+      el.mozMatchesSelector ||
+      el.msMatchesSelector;
 
     while (el) {
       if (matchesSelector.call(el, selector)) {
@@ -159,7 +180,9 @@
 
 - [1.7](#1.7) <a name='1.7'></a> Родители до
 
-  Получить родителей каждого элемента в текущем результате совпавших элементов, но не включая элемент, совпавший с указанным селектором, узлом DOM'а, или объектом jQuery.
+  Получить родителей каждого элемента в текущем результате совпавших элементов,
+  но не включая элемент, совпавший с указанным селектором, узлом DOM'а, или
+  объектом jQuery.
 
   ```js
   // jQuery
@@ -168,7 +191,11 @@
   // Нативно
   function parentsUntil(el, selector, filter) {
     const result = [];
-    const matchesSelector = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
+    const matchesSelector =
+      el.matches ||
+      el.webkitMatchesSelector ||
+      el.mozMatchesSelector ||
+      el.msMatchesSelector;
 
     // Совпадать начиная от родителя
     el = el.parentElement;
@@ -188,31 +215,34 @@
 
 - [1.8](#1.8) <a name='1.8'></a> Форма
 
-  + Input/Textarea
+  - Input/Textarea
 
     ```js
     // jQuery
-    $('#my-input').val();
+    $("#my-input").val();
 
     // Нативно
-    document.querySelector('#my-input').value;
+    document.querySelector("#my-input").value;
     ```
 
-  + Получить индекс e.currentTarget между `.radio`
+  - Получить индекс e.currentTarget между `.radio`
 
     ```js
     // jQuery
-    $('.radio').index(e.currentTarget);
+    $(".radio").index(e.currentTarget);
 
     // Нативно
-    Array.prototype.indexOf.call(document.querySelectorAll('.radio'), e.currentTarget);
+    Array.prototype.indexOf.call(
+      document.querySelectorAll(".radio"),
+      e.currentTarget
+    );
     ```
 
 - [1.9](#1.9) <a name='1.9'></a> Содержимое Iframe
 
   `$('iframe').contents()` возвращает `contentDocument` именно для этого iframe
 
-  + Контент Iframe
+  - Контент Iframe
 
     ```js
     // jQuery
@@ -222,21 +252,21 @@
     iframe.contentDocument;
     ```
 
-  + Iframe Query
+  - Iframe Query
 
     ```js
     // jQuery
-    $iframe.contents().find('.css');
+    $iframe.contents().find(".css");
 
     // Нативно
-    iframe.contentDocument.querySelectorAll('.css');
+    iframe.contentDocument.querySelectorAll(".css");
     ```
 
 - [1.10](#1.10) <a name='1.10'></a> Найти body
 
   ```js
   // jQuery
-  $('body');
+  $("body");
 
   // Нативно
   document.body;
@@ -244,36 +274,37 @@
 
 - [1.11](#1.11) <a name='1.11'></a> Получение и изменение атрибута
 
-  + Найти атрибут
+  - Найти атрибут
 
     ```js
     // jQuery
-    $el.attr('foo');
+    $el.attr("foo");
 
     // Нативно
-    el.getAttribute('foo');
+    el.getAttribute("foo");
     ```
-  + Добавление атрибута
+
+  - Добавление атрибута
 
     ```js
     // jQuery, помните, это происходит в памяти без изменения DOM
-    $el.attr('foo', 'bar');
+    $el.attr("foo", "bar");
 
     // Нативно
-    el.setAttribute('foo', 'bar');
+    el.setAttribute("foo", "bar");
     ```
 
-  + Найти `data-` атрибут
+  - Найти `data-` атрибут
 
     ```js
     // jQuery
-    $el.data('foo');
+    $el.data("foo");
 
     // Нативно (используя `getAttribute`)
-    el.getAttribute('data-foo');
+    el.getAttribute("data-foo");
 
     // Нативно (используя `dataset`, если не требуется поддержка ниже IE 11)
-    el.dataset['foo'];
+    el.dataset["foo"];
     ```
 
 **[⬆ Наверх](#Содержание)**
@@ -282,11 +313,11 @@
 
 - [2.1](#2.1) <a name='2.1'></a> CSS
 
-  + Получить стили
+  - Получить стили
 
     ```js
     // jQuery
-    $el.css('color');
+    $el.css("color");
 
     // Нативно
     // ЗАМЕТКА: Известная ошибка, возвращает 'auto' если значение стиля 'auto'
@@ -296,66 +327,68 @@
     win.getComputedStyle(el, null).color;
     ```
 
-  + Присвоение style
+  - Присвоение style
 
     ```js
     // jQuery
-    $el.css({ color: '#f01' });
+    $el.css({ color: "#f01" });
 
     // Нативно
-    el.style.color = '#f01';
+    el.style.color = "#f01";
     ```
 
-  + Получение/Присвоение стилей
+  - Получение/Присвоение стилей
 
-    Заметьте что если вы хотите присвоить несколько стилей за раз, вы можете сослаться на [setStyles](https://github.com/oneuijs/oui-dom-utils/blob/master/src/index.js#L194) метод в пакете oui-dom-utils.
+    Заметьте что если вы хотите присвоить несколько стилей за раз, вы можете
+    сослаться на
+    [setStyles](https://github.com/oneuijs/oui-dom-utils/blob/master/src/index.js#L194)
+    метод в пакете oui-dom-utils.
 
+* Добавить класс
 
-  + Добавить класс
+  ```js
+  // jQuery
+  $el.addClass(className);
 
-    ```js
-    // jQuery
-    $el.addClass(className);
+  // Нативно
+  el.classList.add(className);
+  ```
 
-    // Нативно
-    el.classList.add(className);
-    ```
+* Удалить class
 
-  + Удалить class
+  ```js
+  // jQuery
+  $el.removeClass(className);
 
-    ```js
-    // jQuery
-    $el.removeClass(className);
+  // Нативно
+  el.classList.remove(className);
+  ```
 
-    // Нативно
-    el.classList.remove(className);
-    ```
+* Имеет ли класс
 
-  + Имеет ли класс
+  ```js
+  // jQuery
+  $el.hasClass(className);
 
-    ```js
-    // jQuery
-    $el.hasClass(className);
+  // Нативно
+  el.classList.contains(className);
+  ```
 
-    // Нативно
-    el.classList.contains(className);
-    ```
+* Переключить класс
 
-  + Переключить класс
+  ```js
+  // jQuery
+  $el.toggleClass(className);
 
-    ```js
-    // jQuery
-    $el.toggleClass(className);
-
-    // Нативно
-    el.classList.toggle(className);
-    ```
+  // Нативно
+  el.classList.toggle(className);
+  ```
 
 - [2.2](#2.2) <a name='2.2'></a> Ширина и Высота
 
   Ширина и высота теоретически имеют общие свойства, например возьмем высоту:
 
-  + Высота окна
+  - Высота окна
 
     ```js
     // Высота окна
@@ -368,7 +401,7 @@
     window.innerHeight;
     ```
 
-  + Высота документа
+  - Высота документа
 
     ```js
     // jQuery
@@ -386,7 +419,7 @@
     );
     ```
 
-  + Высота элемента
+  - Высота элемента
 
     ```js
     // jQuery
@@ -400,7 +433,9 @@
       const borderBottomWidth = parseFloat(styles.borderBottomWidth);
       const paddingTop = parseFloat(styles.paddingTop);
       const paddingBottom = parseFloat(styles.paddingBottom);
-      return height - borderBottomWidth - borderTopWidth - paddingTop - paddingBottom;
+      return (
+        height - borderBottomWidth - borderTopWidth - paddingTop - paddingBottom
+      );
     }
 
     // С точностью до целого числа（когда `border-box`, это `height - border`; когда `content-box`, это `height + padding`）
@@ -412,7 +447,7 @@
 
 - [2.3](#2.3) <a name='2.3'></a> Позиция и смещение
 
-  + Position
+  - Position
 
     Получить текущие координаты элемента относительно смещения его родителя
 
@@ -424,7 +459,7 @@
     { left: el.offsetLeft, top: el.offsetTop }
     ```
 
-  + Offset
+  - Offset
 
     Получить текущие координаты элемента относительно документа
 
@@ -433,12 +468,13 @@
     $el.offset();
 
     // Нативно
-    function getOffset (el) {
+    function getOffset(el) {
       const box = el.getBoundingClientRect();
 
       return {
         top: box.top + window.pageYOffset - document.documentElement.clientTop,
-        left: box.left + window.pageXOffset - document.documentElement.clientLeft
+        left:
+          box.left + window.pageXOffset - document.documentElement.clientLeft,
       };
     }
     ```
@@ -450,7 +486,8 @@
   $(window).scrollTop();
 
   // Нативно
-  (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+  (document.documentElement && document.documentElement.scrollTop) ||
+    document.body.scrollTop;
   ```
 
 **[⬆ Наверх](#Содержание)**
@@ -471,7 +508,7 @@
 
 - [3.2](#3.2) <a name='3.2'></a> Text
 
-  + Получить текст
+  - Получить текст
 
     Получить текстовое содержимое элемента, включая его потомков,
 
@@ -483,7 +520,7 @@
     el.textContent;
     ```
 
-  + Присвоить текст
+  - Присвоить текст
 
     ```js
     // jQuery
@@ -495,7 +532,7 @@
 
 - [3.3](#3.3) <a name='3.3'></a> HTML
 
-  + Получить HTML
+  - Получить HTML
 
     ```js
     // jQuery
@@ -505,7 +542,7 @@
     el.innerHTML;
     ```
 
-  + Присвоить HTML
+  - Присвоить HTML
 
     ```js
     // jQuery
@@ -524,7 +561,7 @@
   $el.append('<div id="container">Hello World</div>');
 
   // Нативно (строка HTML)
-  el.insertAdjacentHTML('beforeend', '<div id="container">Hello World</div>');
+  el.insertAdjacentHTML("beforeend", '<div id="container">Hello World</div>');
 
   // Нативно (элемент)
   el.appendChild(newEl);
@@ -532,14 +569,14 @@
 
 - [3.5](#3.5) <a name='3.5'></a> Prepend
 
-	Добавить родительскому элементу новый дочерний элемент перед остальными
+      	Добавить родительскому элементу новый дочерний элемент перед остальными
 
   ```js
   // jQuery
   $el.prepend('<div id="container">Hello World</div>');
 
   // Нативно (строка HTML)
-  el.insertAdjacentHTML('afterbegin', '<div id="container">Hello World</div>');
+  el.insertAdjacentHTML("afterbegin", '<div id="container">Hello World</div>');
 
   // Нативно (элемент)
   el.insertBefore(newEl, el.firstChild);
@@ -554,7 +591,10 @@
   $newEl.insertBefore(selector);
 
   // Нативно (строка HTML)
-  el.insertAdjacentHTML('beforebegin ', '<div id="container">Hello World</div>');
+  el.insertAdjacentHTML(
+    "beforebegin ",
+    '<div id="container">Hello World</div>'
+  );
 
   // Нативно (элемент)
   const el = document.querySelector(selector);
@@ -572,7 +612,7 @@
   $newEl.insertAfter(selector);
 
   // Нативно (строка HTML)
-  el.insertAdjacentHTML('afterend', '<div id="container">Hello World</div>');
+  el.insertAdjacentHTML("afterend", '<div id="container">Hello World</div>');
 
   // Нативно (элемент)
   const el = document.querySelector(selector);
@@ -583,7 +623,7 @@
 
 - [3.8](#3.8) <a name='3.8'></a> is
 
-  Возвращает `true` если  совпадает с селектором запроса
+  Возвращает `true` если совпадает с селектором запроса
 
   ```js
   // jQuery - заметьте что `is` так же работает с `function` или `elements` которые не имеют к этому отношения
@@ -597,29 +637,39 @@
 
 ## Ajax
 
-[Fetch API](https://fetch.spec.whatwg.org/) - новый стандарт, заменяющий XMLHttpRequest для ajax. Работает в Chrome и Firefox, вы можете использовать полифилы, для поддержки старых браузеров.
+[Fetch API](https://fetch.spec.whatwg.org/) - новый стандарт, заменяющий
+XMLHttpRequest для ajax. Работает в Chrome и Firefox, вы можете использовать
+полифилы, для поддержки старых браузеров.
 
-Попробуйте [github/fetch](http://github.com/github/fetch) для IE9+ или [fetch-ie8](https://github.com/camsong/fetch-ie8/) для IE8+, [fetch-jsonp](https://github.com/camsong/fetch-jsonp) для JSONP-запросов.
+Попробуйте [github/fetch](http://github.com/github/fetch) для IE9+ или
+[fetch-ie8](https://github.com/camsong/fetch-ie8/) для IE8+,
+[fetch-jsonp](https://github.com/camsong/fetch-jsonp) для JSONP-запросов.
 
-- [4.1](#4.1) <a name='4.1'></a> Загрузить данные с сервера и поместить полученный HTML в элемент.
+- [4.1](#4.1) <a name='4.1'></a> Загрузить данные с сервера и поместить
+  полученный HTML в элемент.
 
   ```js
   // jQuery
-  $(selector).load(url, completeCallback)
+  $(selector).load(url, completeCallback);
 
   // Нативно
-  fetch(url).then(data => data.text()).then(data => {
-    document.querySelector(selector).innerHTML = data
-  }).then(completeCallback)
+  fetch(url)
+    .then((data) => data.text())
+    .then((data) => {
+      document.querySelector(selector).innerHTML = data;
+    })
+    .then(completeCallback);
   ```
 
 **[⬆ Наверх](#Содержание)**
 
 ## События
 
-Для полной замены пространства имен и делегирования, используйте  [oui-dom-events](https://github.com/oneuijs/oui-dom-events)
+Для полной замены пространства имен и делегирования, используйте
+[oui-dom-events](https://github.com/oneuijs/oui-dom-events)
 
-- [5.0](#5.0) <a name='5.0'></a> Готовность документа по событию `DOMContentLoaded`
+- [5.0](#5.0) <a name='5.0'></a> Готовность документа по событию
+  `DOMContentLoaded`
 
   ```js
   // jQuery
@@ -627,10 +677,10 @@
 
   // Нативно
   // Проверяем, что событие DOMContentLoaded было выполнено
-  if (document.readyState !== 'loading') {
+  if (document.readyState !== "loading") {
     eventHandler();
   } else {
-    document.addEventListener('DOMContentLoaded', eventHandler);
+    document.addEventListener("DOMContentLoaded", eventHandler);
   }
   ```
 
@@ -658,14 +708,14 @@
 
   ```js
   // jQuery
-  $(el).trigger('custom-event', {key1: 'data'});
+  $(el).trigger("custom-event", { key1: "data" });
 
   // Нативно
   if (window.CustomEvent) {
-    const event = new CustomEvent('custom-event', {detail: {key1: 'data'}});
+    const event = new CustomEvent("custom-event", { detail: { key1: "data" } });
   } else {
-    const event = document.createEvent('CustomEvent');
-    event.initCustomEvent('custom-event', true, true, {key1: 'data'});
+    const event = document.createEvent("CustomEvent");
+    event.initCustomEvent("custom-event", true, true, { key1: "data" });
   }
 
   el.dispatchEvent(event);
@@ -675,11 +725,15 @@
 
 ## Утилиты
 
-Большинство из утилит, представленных в jQuery также могут быть найдены в нативном API. Более продвинутые функции могут быть выбраны из других, более актуальных библиотек, направленных на согласованность данных и производительность. Например, [Lodash](https://lodash.com) является рекомендуемой заменой.
+Большинство из утилит, представленных в jQuery также могут быть найдены в
+нативном API. Более продвинутые функции могут быть выбраны из других, более
+актуальных библиотек, направленных на согласованность данных и
+производительность. Например, [Lodash](https://lodash.com) является
+рекомендуемой заменой.
 
 - [6.1](#6.1) <a name='6.1'></a> Basic utilities
 
-  + isArray
+  - isArray
 
   Определить, является ли аргумент массивом.
 
@@ -690,7 +744,8 @@
   // Нативно
   Array.isArray(array);
   ```
-+ isWindow
+
+* isWindow
 
   Определить, является ли аргумент окном.
 
@@ -704,238 +759,248 @@
   }
   ```
 
-  + inArray
+  - inArray
 
- Поиск определенного значения в массиве и возвращение его индекса (или -1 если значение не найдено)
+Поиск определенного значения в массиве и возвращение его индекса (или -1 если
+значение не найдено)
 
-  ```js
-  // jQuery
-  $.inArray(item, array);
+```js
+// jQuery
+$.inArray(item, array);
 
-  // Нативно
-  array.indexOf(item) > -1;
+// Нативно
+array.indexOf(item) > -1;
 
-  // В нотации ES6
-  array.includes(item);
-  ```
+// В нотации ES6
+array.includes(item);
+```
 
-  + isNumeric
+- isNumeric
 
-  Determine if the argument passed is numerical.
-  Use `typeof` to decide the type or the `type` example for better accuracy. Определить, является ли переданный аргумент числовым. Используйте `typeof` для определения типа или `type` для большей точности.
+Determine if the argument passed is numerical. Use `typeof` to decide the type
+or the `type` example for better accuracy. Определить, является ли переданный
+аргумент числовым. Используйте `typeof` для определения типа или `type` для
+большей точности.
 
-  ```js
-  // jQuery
-  $.isNumeric(item);
+```js
+// jQuery
+$.isNumeric(item);
 
-  // Нативно
-  function isNumeric(n) {
-    return !isNaN(parseFloat(n)) && isFinite(n);
-  }
-  ```
+// Нативно
+function isNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
+}
+```
 
-  + isFunction
+- isFunction
 
-  Определить,  является ли переданный аргумент функцией(объектом) JavaScript.
+Определить, является ли переданный аргумент функцией(объектом) JavaScript.
 
-  ```js
-  // jQuery
-  $.isFunction(item);
+```js
+// jQuery
+$.isFunction(item);
 
-  // Нативно
-  function isFunction(item) {
-    if (typeof item === 'function') {
-      return true;
-    }
-    var type = Object.prototype.toString.call(item);
-    return type === '[object Function]' || type === '[object GeneratorFunction]';
-  }
-  ```
-
-  + isEmptyObject
-
-  Проверить, является ли объект пустым (не содержащим перечесляемых свойств)
-
-  ```js
-  // jQuery
-  $.isEmptyObject(obj);
-
-  // Нативно
-  function isEmptyObject(obj) {
-    return Object.keys(obj).length === 0;
-  }
-  ```
-
-  + isPlainObject
-
-  Проверить, является ли объект простым / 'ванильным' (созданным с помощью “{}” или “new Object”)
-
-  ```js
-  // jQuery
-  $.isPlainObject(obj);
-
-  // Нативно
-  function isPlainObject(obj) {
-    if (typeof (obj) !== 'object' || obj.nodeType || obj !== null && obj !== undefined && obj === obj.window) {
-      return false;
-    }
-
-    if (obj.constructor &&
-        !Object.prototype.hasOwnProperty.call(obj.constructor.prototype, 'isPrototypeOf')) {
-      return false;
-    }
-
+// Нативно
+function isFunction(item) {
+  if (typeof item === "function") {
     return true;
   }
-  ```
+  var type = Object.prototype.toString.call(item);
+  return type === "[object Function]" || type === "[object GeneratorFunction]";
+}
+```
 
-  + extend
+- isEmptyObject
 
-  Объединить содержимое двух или более объектов в новый объект, не изменяя ни один из аргументов.
-  object.assign является частью ES6 API, также можно использовать [полифилл](https://github.com/ljharb/object.assign).
+Проверить, является ли объект пустым (не содержащим перечесляемых свойств)
 
-  ```js
-  // jQuery
-  $.extend({}, object1, object2);
+```js
+// jQuery
+$.isEmptyObject(obj);
 
-  // Нативно
-  Object.assign({}, object1, object2);
-  ```
+// Нативно
+function isEmptyObject(obj) {
+  return Object.keys(obj).length === 0;
+}
+```
 
-  + trim
+- isPlainObject
 
-  Убрать символы пробелов из начала и конца строки.
+Проверить, является ли объект простым / 'ванильным' (созданным с помощью “{}”
+или “new Object”)
 
-  ```js
-  // jQuery
-  $.trim(string);
+```js
+// jQuery
+$.isPlainObject(obj);
 
-  // Нативно
-  string.trim();
-  ```
-
-  + map
-
-  Преобразовать все элементы массива или объекта в новый массив.
-
-  ```js
-  // jQuery
-  $.map(array, (value, index) => {
-  });
-
-  // Нативно
-  array.map((value, index) => {
-  });
-  ```
-
-  + each
-
-  Общая (generic) функция итератора, которую можно использовать для последовательной итерации как по объектам, так и по массивам.
-
-  ```js
-  // jQuery
-  $.each(array, (index, value) => {
-  });
-
-  // Нативно
-  array.forEach((value, index) => {
-  });
-  ```
-
-  + grep
-
-  Найти элементы массива которые удовлетворяют функции-фильтру.
-
-  ```js
-  // jQuery
-  $.grep(array, (value, index) => {
-  });
-
-  // Нативно
-  array.filter((value, index) => {
-  });
-  ```
-
-  + type
-
-  Определите внутренний класс JavaScript объекта.
-
-  ```js
-  // jQuery
-  $.type(obj);
-
-  // Нативно
-  function type(item) {
-    const reTypeOf = /(?:^\[object\s(.*?)\]$)/;
-    return Object.prototype.toString.call(item)
-      .replace(reTypeOf, '$1')
-      .toLowerCase();
-  }
-  ```
-
-  + merge
-
-  Объединить содержимое двух массивов в первый массив.
-
-  ```js
-  // jQuery, не удаляя дубликаты
-  $.merge(array1, array2);
-
-  // Нативно, не удаляя дубликаты
-  function merge(...args) {
-    return [].concat(...args)
+// Нативно
+function isPlainObject(obj) {
+  if (
+    typeof obj !== "object" ||
+    obj.nodeType ||
+    (obj !== null && obj !== undefined && obj === obj.window)
+  ) {
+    return false;
   }
 
-  // В нотации ES6, не удаляя дубликаты
-  array1 = [...array1, ...array2]
-
-  // Версия с удалением дубликатов
-  function merge(...args) {
-    return Array.from(new Set([].concat(...args)))
+  if (
+    obj.constructor &&
+    !Object.prototype.hasOwnProperty.call(
+      obj.constructor.prototype,
+      "isPrototypeOf"
+    )
+  ) {
+    return false;
   }
-  ```
 
-  + now
+  return true;
+}
+```
 
-  Вернуть текущее время в числовом формате.
+- extend
 
-  ```js
-  // jQuery
-  $.now();
+Объединить содержимое двух или более объектов в новый объект, не изменяя ни один
+из аргументов. object.assign является частью ES6 API, также можно использовать
+[полифилл](https://github.com/ljharb/object.assign).
 
-  // Нативно
-  Date.now();
-  ```
+```js
+// jQuery
+$.extend({}, object1, object2);
 
-  + proxy
+// Нативно
+Object.assign({}, object1, object2);
+```
 
-  По заданной функции, создает другую такую же, cохраняя контекст.
+- trim
 
-  ```js
-  // jQuery
-  $.proxy(fn, context);
+Убрать символы пробелов из начала и конца строки.
 
-  // Нативно
-  fn.bind(context);
-  ```
+```js
+// jQuery
+$.trim(string);
 
-  <a name="makeArray"></a>+ makeArray
+// Нативно
+string.trim();
+```
 
-  Конвертирует объекты, похожие на массивы, в массивы JavaScript.
+- map
 
-  ```js
-  // jQuery
-  $.makeArray(arrayLike);
+Преобразовать все элементы массива или объекта в новый массив.
 
-  // Нативно
-  Array.prototype.slice.call(arrayLike);
+```js
+// jQuery
+$.map(array, (value, index) => {});
 
-  // В нотации ES6: Array.from() метод
-  Array.from(arrayLike);
+// Нативно
+array.map((value, index) => {});
+```
 
-  // В нотации ES6: используя оператор распространения
-  [...arrayLike];
-  ```
+- each
+
+Общая (generic) функция итератора, которую можно использовать для
+последовательной итерации как по объектам, так и по массивам.
+
+```js
+// jQuery
+$.each(array, (index, value) => {});
+
+// Нативно
+array.forEach((value, index) => {});
+```
+
+- grep
+
+Найти элементы массива которые удовлетворяют функции-фильтру.
+
+```js
+// jQuery
+$.grep(array, (value, index) => {});
+
+// Нативно
+array.filter((value, index) => {});
+```
+
+- type
+
+Определите внутренний класс JavaScript объекта.
+
+```js
+// jQuery
+$.type(obj);
+
+// Нативно
+function type(item) {
+  const reTypeOf = /(?:^\[object\s(.*?)\]$)/;
+  return Object.prototype.toString
+    .call(item)
+    .replace(reTypeOf, "$1")
+    .toLowerCase();
+}
+```
+
+- merge
+
+Объединить содержимое двух массивов в первый массив.
+
+```js
+// jQuery, не удаляя дубликаты
+$.merge(array1, array2);
+
+// Нативно, не удаляя дубликаты
+function merge(...args) {
+  return [].concat(...args);
+}
+
+// В нотации ES6, не удаляя дубликаты
+array1 = [...array1, ...array2];
+
+// Версия с удалением дубликатов
+function merge(...args) {
+  return Array.from(new Set([].concat(...args)));
+}
+```
+
+- now
+
+Вернуть текущее время в числовом формате.
+
+```js
+// jQuery
+$.now();
+
+// Нативно
+Date.now();
+```
+
+- proxy
+
+По заданной функции, создает другую такую же, cохраняя контекст.
+
+```js
+// jQuery
+$.proxy(fn, context);
+
+// Нативно
+fn.bind(context);
+```
+
+<a name="makeArray"></a>+ makeArray
+
+Конвертирует объекты, похожие на массивы, в массивы JavaScript.
+
+```js
+// jQuery
+$.makeArray(arrayLike);
+
+// Нативно
+Array.prototype.slice.call(arrayLike);
+
+// В нотации ES6: Array.from() метод
+Array.from(arrayLike);
+
+// В нотации ES6: используя оператор распространения
+[...arrayLike];
+```
 
 - [6.2](#6.2) <a name='6.2'></a> Contains
 
@@ -959,7 +1024,7 @@
 
   // Нативно
   function Globaleval(code) {
-    const script = document.createElement('script');
+    const script = document.createElement("script");
     script.text = code;
 
     document.head.appendChild(script).parentNode.removeChild(script);
@@ -971,7 +1036,7 @@
 
 - [6.4](#6.4) <a name='6.4'></a> parse
 
-  + parseHTML
+  - parseHTML
 
   Разбирает строку в массив узлов DOM.
 
@@ -985,7 +1050,7 @@
 
     // Устанавливает базовую ссылку для созданного документа, чтобы любые проанализированные элементы с URL-адресами
     // основывались на URL-адресе документа.
-    const base = context.createElement('base');
+    const base = context.createElement("base");
     base.href = document.location.href;
     context.head.appendChild(base);
 
@@ -993,23 +1058,23 @@
     return context.body.children;
   }
   ```
+
 - [6.5](#6.4) <a name='6.5'></a> exists
 
-+ exists
+* exists
 
   Проверяет, существует ли элемент в DOM.
 
   ```js
   // jQuery
-  if ($('selector').length) {
-     // exists
+  if ($("selector").length) {
+    // exists
   }
 
   // Нативно
-  var element =  document.getElementById('elementId');
-  if (typeof(element) != 'undefined' && element != null)
-  {
-     // exists
+  var element = document.getElementById("elementId");
+  if (typeof element != "undefined" && element != null) {
+    // exists
   }
   ```
 
@@ -1017,23 +1082,29 @@
 
 ## Промисы (Promises)
 
-Промисы предоставляют собой удобный способ организации асинхронного кода. У jQuery есть свой способ обработки промисов. Нативный JavaScript реализует тонкий и минимальный API для обработки промисов в соответствии с [Promises/A+](http://promises-aplus.github.io/promises-spec/) спецификацией.
+Промисы предоставляют собой удобный способ организации асинхронного кода. У
+jQuery есть свой способ обработки промисов. Нативный JavaScript реализует тонкий
+и минимальный API для обработки промисов в соответствии с
+[Promises/A+](http://promises-aplus.github.io/promises-spec/) спецификацией.
 
 - [7.1](#7.1) <a name='7.1'></a> done, fail, always
 
-  `done` вызывается, когда промис разрешен,` fail` вызывается, когда промис отклонен, `always` вызывается, когда промис либо разрешен, либо отклонен.
+  `done` вызывается, когда промис разрешен,`fail` вызывается, когда промис
+  отклонен, `always` вызывается, когда промис либо разрешен, либо отклонен.
 
   ```js
   // jQuery
-  $promise.done(doneCallback).fail(failCallback).always(alwaysCallback)
+  $promise.done(doneCallback).fail(failCallback).always(alwaysCallback);
 
   // Нативно
-  promise.then(doneCallback, failCallback).then(alwaysCallback, alwaysCallback)
+  promise.then(doneCallback, failCallback).then(alwaysCallback, alwaysCallback);
   ```
 
 - [7.2](#7.2) <a name='7.2'></a> when
 
-  `when` используется для обработки нескольких промисов. Он разрешится, когда будут выполнены все промисы, и отклонится, если один из промисов будет отклонен.
+  `when` используется для обработки нескольких промисов. Он разрешится, когда
+  будут выполнены все промисы, и отклонится, если один из промисов будет
+  отклонен.
 
   ```js
   // jQuery
@@ -1053,10 +1124,10 @@
   function asyncFunc() {
     const defer = new $.Deferred();
     setTimeout(() => {
-      if(true) {
-        defer.resolve('some_value_computed_asynchronously');
+      if (true) {
+        defer.resolve("some_value_computed_asynchronously");
       } else {
-        defer.reject('failed');
+        defer.reject("failed");
       }
     }, 1000);
 
@@ -1068,9 +1139,9 @@
     return new Promise((resolve, reject) => {
       setTimeout(() => {
         if (true) {
-          resolve('some_value_computed_asynchronously');
+          resolve("some_value_computed_asynchronously");
         } else {
-          reject('failed');
+          reject("failed");
         }
       }, 1000);
     });
@@ -1094,10 +1165,10 @@
   function asyncFunc() {
     const defer = defer();
     setTimeout(() => {
-      if(true) {
-        defer.resolve('some_value_computed_asynchronously');
+      if (true) {
+        defer.resolve("some_value_computed_asynchronously");
       } else {
-        defer.reject('failed');
+        defer.reject("failed");
       }
     }, 1000);
 
@@ -1118,8 +1189,8 @@
 
   // Нативно
   // За дополнительной информацией о методе show, пройдите по ссылке https://github.com/oneuijs/oui-dom-utils/blob/master/src/index.js#L363
-  el.style.display = ''|'inline'|'inline-block'|'inline-table'|'block';
-  el.style.display = 'none';
+  el.style.display = "" | "inline" | "inline-block" | "inline-table" | "block";
+  el.style.display = "none";
   ```
 
 - [8.2](#8.2) <a name='8.2'></a> Toggle
@@ -1131,10 +1202,13 @@
   $el.toggle();
 
   // Нативно
-  if (el.ownerDocument.defaultView.getComputedStyle(el, null).display === 'none') {
-    el.style.display = ''|'inline'|'inline-block'|'inline-table'|'block';
+  if (
+    el.ownerDocument.defaultView.getComputedStyle(el, null).display === "none"
+  ) {
+    el.style.display =
+      "" | "inline" | "inline-block" | "inline-table" | "block";
   } else {
-    el.style.display = 'none';
+    el.style.display = "none";
   }
   ```
 
@@ -1150,14 +1224,14 @@
     if (ms) {
       el.style.transition = `opacity ${ms} ms`;
       el.addEventListener(
-        'transitionend',
-        function(event) {
-          el.style.display = 'none';
+        "transitionend",
+        function (event) {
+          el.style.display = "none";
         },
         false
       );
     }
-    el.style.opacity = '0';
+    el.style.opacity = "0";
   }
 
   // Нативный fadeIn (появление)
@@ -1166,7 +1240,7 @@
 
     if (ms) {
       let opacity = 0;
-      const timer = setInterval(function() {
+      const timer = setInterval(function () {
         opacity += 50 / ms;
         if (opacity >= 1) {
           clearInterval(timer);
@@ -1186,10 +1260,10 @@
 
   ```js
   // jQuery
-  $el.fadeTo('slow',0.15);
+  $el.fadeTo("slow", 0.15);
   // Нативно
-  el.style.transition = 'opacity 3s'; // assume 'slow' equals 3 seconds
-  el.style.opacity = '0.15';
+  el.style.transition = "opacity 3s"; // assume 'slow' equals 3 seconds
+  el.style.opacity = "0.15";
   ```
 
 - [8.5](#8.5) <a name='8.5'></a> FadeToggle
@@ -1201,12 +1275,12 @@
   $el.fadeToggle();
 
   // Нативно
-  el.style.transition = 'opacity 3s';
+  el.style.transition = "opacity 3s";
   const { opacity } = el.ownerDocument.defaultView.getComputedStyle(el, null);
-  if (opacity === '1') {
-    el.style.opacity = '0';
+  if (opacity === "1") {
+    el.style.opacity = "0";
   } else {
-    el.style.opacity = '1';
+    el.style.opacity = "1";
   }
   ```
 
@@ -1218,10 +1292,10 @@
   $el.slideDown();
 
   // Нативно
-  const originHeight = '100px';
-  el.style.transition = 'height 3s';
+  const originHeight = "100px";
+  el.style.transition = "height 3s";
   // slideUp
-  el.style.height = '0px';
+  el.style.height = "0px";
   // slideDown
   el.style.height = originHeight;
   ```
@@ -1235,19 +1309,20 @@
   $el.slideToggle();
 
   // Нативно
-  const originHeight = '100px';
-  el.style.transition = 'height 3s';
+  const originHeight = "100px";
+  el.style.transition = "height 3s";
   const { height } = el.ownerDocument.defaultView.getComputedStyle(el, null);
   if (parseInt(height, 10) === 0) {
     el.style.height = originHeight;
   } else {
-   el.style.height = '0px';
+    el.style.height = "0px";
   }
   ```
 
 - [8.8](#8.8) <a name='8.8'></a> Animate
 
-  Perform a custom animation of a set of CSS properties. Применить пользовательский набор свойств анимации CSS.
+  Perform a custom animation of a set of CSS properties. Применить
+  пользовательский набор свойств анимации CSS.
 
   ```js
   // jQuery
@@ -1260,24 +1335,31 @@
   )
   ```
 
-
 ## Альтернативы
 
-* [You Might Not Need jQuery](http://youmightnotneedjquery.com/) - Примеры как исполняются частые события, элементы, ajax и тд с ванильным javascript.
-* [npm-dom](http://github.com/npm-dom) и [webmodules](http://github.com/webmodules) - Отдельные DOM модули можно найти на NPM
+- [You Might Not Need jQuery](http://youmightnotneedjquery.com/) - Примеры как
+  исполняются частые события, элементы, ajax и тд с ванильным javascript.
+- [npm-dom](http://github.com/npm-dom) и
+  [webmodules](http://github.com/webmodules) - Отдельные DOM модули можно найти
+  на NPM
 
 ## Поддержка браузеров
 
-![Chrome][chrome-image] | ![Firefox][firefox-image] | ![IE][ie-image] | ![Opera][opera-image] | ![Safari][safari-image]
---- | --- | --- | --- | --- |
-Latest ✔ | Latest ✔ | 10+ ✔ | Latest ✔ | 6.1+ ✔ |
+| ![Chrome][chrome-image] | ![Firefox][firefox-image] | ![IE][ie-image] | ![Opera][opera-image] | ![Safari][safari-image] |
+| ----------------------- | ------------------------- | --------------- | --------------------- | ----------------------- |
+| Latest ✔                | Latest ✔                  | 10+ ✔           | Latest ✔              | 6.1+ ✔                  |
 
 # License
 
 MIT
 
-[chrome-image]: https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png
-[firefox-image]: https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png
-[ie-image]: https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png
-[opera-image]: https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png
-[safari-image]: https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png
+[chrome-image]:
+  https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png
+[firefox-image]:
+  https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png
+[ie-image]:
+  https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png
+[opera-image]:
+  https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png
+[safari-image]:
+  https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png
