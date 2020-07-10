@@ -1,22 +1,41 @@
-TRANSLATION to German. WORK IN PROGRESS!
+**TRANSLATION to German. WORK IN PROGRESS!**
 
 ## You Don't Need jQuery [![Build Status](https://travis-ci.org/oneuijs/You-Dont-Need-jQuery.svg)](https://travis-ci.org/oneuijs/You-Dont-Need-jQuery)
 
-Frontend environments evolve rapidly nowadays, modern browsers have already implemented a great deal of DOM/BOM APIs which are good enough. We don't have to learn jQuery from scratch for DOM manipulation or events. In the meantime, thanks to the prevailment of frontend libraries such as React, Angular and Vue, manipulating DOM directly becomes anti-pattern, jQuery has never been less important. This project summarizes most of the jQuery method alternatives in native implementation, with IE 10+ support.
+---
+- Original
+  1. Frontend environments evolve rapidly nowadays, 
+  2. modern browsers have already implemented a great deal of DOM/BOM APIs which are good enough.
+  3. We don't have to learn jQuery from scratch for DOM manipulation or events.
+  4. In the meantime, thanks to the prevailment of frontend libraries such as React,
+  5. Angular and Vue, manipulating DOM directly becomes anti-pattern,
+  6. jQuery has never been less important.
+  7. This project summarizes most of the jQuery method alternatives in native implementation, with IE 10+ support.
+
+- Translation -- _fraglich_ _(sinngemäße Übersetung austehend)_
+  1. Frontend-Umgebungen entwickeln sich heutzutage schnell.
+  2. Moderne Browser haben bereits _(great deal of)_ _Implementationen_ von DOM/BOM APIs, die gut genug sind.
+  3. Wir müssen kein jQuery von Anfangan lernen, um den DOM zu manipulieren oder für Events.
+  4. Mitlerweile _(...)_
+  5. _(...)_
+  6. jQuery war niemals unwichtiger.
+  7. Dieses Projekt _(summarizes/sammelt?)_ die meisten _Alternativen der jQuery-Methoden_ als native Implementation, mit Unterstützung von IE 10+.
+  
+---
 
 ## Table of Contents
 
-1. [Translations](#translations)
-1. [Query Selector](#query-selector)
+1. [Übersetzungen](#translations)
+1. [Query-Selector](#query-selector)
 1. [CSS & Style](#css--style)
-1. [DOM Manipulation](#dom-manipulation)
+1. [DOM-Manipulation](#dom-manipulation)
 1. [Ajax](#ajax)
 1. [Events](#events)
 1. [Utilities](#utilities)
 1. [Promises](#promises)
 1. [Animation](#animation)
 1. [Alternatives](#alternatives)
-1. [Browser Support](#browser-support)
+1. [Browser Unterstützung](#browser-support)
 
 ## Translations
 
@@ -32,9 +51,9 @@ Frontend environments evolve rapidly nowadays, modern browsers have already impl
 * [Italiano](./README-it.md)
 * [Français](./README-fr.md)
 * [日本語](./README-ja.md)
-* [German](./README-de.md)
+* [Deutsch](./README-de.md)
 
-## Query Selector
+## Query-Selector
 
 In place of common selectors like class, id or attribute we can use `document.querySelector` or `document.querySelectorAll` for substitution. The differences lie in:
 * `document.querySelector` returns the first matched element
