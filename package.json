@@ -22,7 +22,7 @@
     "eslint-plugin-react": "^3.10",
     "isparta": "^4.0",
     "istanbul-instrumenter-loader": "^0.1",
-    "jquery": "^3.5",
+    "jquery": "^3.6.0",
     "karma": "^0.13",
     "karma-coverage": "^0.5.3",
     "karma-firefox-launcher": "^0.1",
