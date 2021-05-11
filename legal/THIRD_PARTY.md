@@ -1,7 +1,6 @@
 # `You-Dont-Need-jQuery`
 
-`You-Dont-Need-jQuery` is licensed under MIT License -
-[https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT).
+`You-Dont-Need-jQuery` is licensed under MIT License - [https://opensource.org/licenses/MIT](https://opensource.org/licenses/MIT).
 
 This page details all runtime dependencies of `You-Dont-Need-jQuery`.
 
@@ -12,14 +11,13 @@ This page details all runtime dependencies of `You-Dont-Need-jQuery`.
 | License | Count |
 | ------- | ----- |
 
+
 ## Contact
 
-Please send any questions or inquires to
-[sara.dolores@gmail.com](mailto:sara.dolores@gmail.com).
+Please send any questions or inquires to [sara.dolores@gmail.com](mailto:sara.dolores@gmail.com).
 
 ---
 
 More Information and Contact
-
 - mitgedanken
   - [Github-Page](https://mitgedanken.github.io/)
