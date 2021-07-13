@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 *   **BREAKING** Merge pull request #15 from mitgedanken/dependabot/npm_and_yarn/handlebars-4.7.7. [2d4533a](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/2d4533a7023de21fcdbe03038c2b2a868a52f19a) by [@sa-tasche](https://github.com/sa-tasche)
 *   **BREAKING** Update Prettier repository configuration. [c877ded](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/c877ded5d92df700f273547200a726ae6752ab4e) by [@atomist-bot](https://github.com/atomist-bot)
 *   **BREAKING** Merge pull request #20 from mitgedanken/atomist/prettier-config-translation-to-german. [bd6dbc0](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/bd6dbc0d52a3296e77667799fac3ef6efe880e0e) by [@sa-tasche](https://github.com/sa-tasche)
+*   **BREAKING** Update npm license usage information. [b0413bf](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/b0413bf51fcae3743705cf929c55dbf744dcc210) by [@atomist-bot](https://github.com/atomist-bot)
+*   **BREAKING** Merge pull request #19 from mitgedanken/atomist/npm-license-translation-to-german. [c37a84a](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/c37a84a58fabad280ea83b183681e4e4573ec216) by [@sa-tasche](https://github.com/sa-tasche)
 
 ### Changed
 
@@ -28,6 +30,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 *   **BREAKING** Merge pull request #15 from mitgedanken/dependabot/npm_and_yarn/handlebars-4.7.7. [2d4533a](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/2d4533a7023de21fcdbe03038c2b2a868a52f19a) by [@sa-tasche](https://github.com/sa-tasche)
 *   **BREAKING** Update Prettier repository configuration. [c877ded](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/c877ded5d92df700f273547200a726ae6752ab4e) by [@atomist-bot](https://github.com/atomist-bot)
 *   **BREAKING** Merge pull request #20 from mitgedanken/atomist/prettier-config-translation-to-german. [bd6dbc0](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/bd6dbc0d52a3296e77667799fac3ef6efe880e0e) by [@sa-tasche](https://github.com/sa-tasche)
+*   **BREAKING** Update npm license usage information. [b0413bf](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/b0413bf51fcae3743705cf929c55dbf744dcc210) by [@atomist-bot](https://github.com/atomist-bot)
+*   **BREAKING** Merge pull request #19 from mitgedanken/atomist/npm-license-translation-to-german. [c37a84a](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/c37a84a58fabad280ea83b183681e4e4573ec216) by [@sa-tasche](https://github.com/sa-tasche)
 
 ### Deprecated
 
@@ -39,6 +43,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 *   **BREAKING** Merge pull request #15 from mitgedanken/dependabot/npm_and_yarn/handlebars-4.7.7. [2d4533a](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/2d4533a7023de21fcdbe03038c2b2a868a52f19a) by [@sa-tasche](https://github.com/sa-tasche)
 *   **BREAKING** Update Prettier repository configuration. [c877ded](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/c877ded5d92df700f273547200a726ae6752ab4e) by [@atomist-bot](https://github.com/atomist-bot)
 *   **BREAKING** Merge pull request #20 from mitgedanken/atomist/prettier-config-translation-to-german. [bd6dbc0](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/bd6dbc0d52a3296e77667799fac3ef6efe880e0e) by [@sa-tasche](https://github.com/sa-tasche)
+*   **BREAKING** Update npm license usage information. [b0413bf](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/b0413bf51fcae3743705cf929c55dbf744dcc210) by [@atomist-bot](https://github.com/atomist-bot)
+*   **BREAKING** Merge pull request #19 from mitgedanken/atomist/npm-license-translation-to-german. [c37a84a](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/c37a84a58fabad280ea83b183681e4e4573ec216) by [@sa-tasche](https://github.com/sa-tasche)
 
 ### Removed
 
@@ -50,6 +56,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 *   **BREAKING** Merge pull request #15 from mitgedanken/dependabot/npm_and_yarn/handlebars-4.7.7. [2d4533a](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/2d4533a7023de21fcdbe03038c2b2a868a52f19a) by [@sa-tasche](https://github.com/sa-tasche)
 *   **BREAKING** Update Prettier repository configuration. [c877ded](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/c877ded5d92df700f273547200a726ae6752ab4e) by [@atomist-bot](https://github.com/atomist-bot)
 *   **BREAKING** Merge pull request #20 from mitgedanken/atomist/prettier-config-translation-to-german. [bd6dbc0](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/bd6dbc0d52a3296e77667799fac3ef6efe880e0e) by [@sa-tasche](https://github.com/sa-tasche)
+*   **BREAKING** Update npm license usage information. [b0413bf](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/b0413bf51fcae3743705cf929c55dbf744dcc210) by [@atomist-bot](https://github.com/atomist-bot)
+*   **BREAKING** Merge pull request #19 from mitgedanken/atomist/npm-license-translation-to-german. [c37a84a](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/c37a84a58fabad280ea83b183681e4e4573ec216) by [@sa-tasche](https://github.com/sa-tasche)
 
 ### Fixed
 
@@ -61,6 +69,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 *   **BREAKING** Merge pull request #15 from mitgedanken/dependabot/npm_and_yarn/handlebars-4.7.7. [2d4533a](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/2d4533a7023de21fcdbe03038c2b2a868a52f19a) by [@sa-tasche](https://github.com/sa-tasche)
 *   **BREAKING** Update Prettier repository configuration. [c877ded](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/c877ded5d92df700f273547200a726ae6752ab4e) by [@atomist-bot](https://github.com/atomist-bot)
 *   **BREAKING** Merge pull request #20 from mitgedanken/atomist/prettier-config-translation-to-german. [bd6dbc0](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/bd6dbc0d52a3296e77667799fac3ef6efe880e0e) by [@sa-tasche](https://github.com/sa-tasche)
+*   **BREAKING** Update npm license usage information. [b0413bf](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/b0413bf51fcae3743705cf929c55dbf744dcc210) by [@atomist-bot](https://github.com/atomist-bot)
+*   **BREAKING** Merge pull request #19 from mitgedanken/atomist/npm-license-translation-to-german. [c37a84a](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/c37a84a58fabad280ea83b183681e4e4573ec216) by [@sa-tasche](https://github.com/sa-tasche)
 
 ### Security
 
@@ -72,3 +82,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 *   **BREAKING** Merge pull request #15 from mitgedanken/dependabot/npm_and_yarn/handlebars-4.7.7. [2d4533a](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/2d4533a7023de21fcdbe03038c2b2a868a52f19a) by [@sa-tasche](https://github.com/sa-tasche)
 *   **BREAKING** Update Prettier repository configuration. [c877ded](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/c877ded5d92df700f273547200a726ae6752ab4e) by [@atomist-bot](https://github.com/atomist-bot)
 *   **BREAKING** Merge pull request #20 from mitgedanken/atomist/prettier-config-translation-to-german. [bd6dbc0](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/bd6dbc0d52a3296e77667799fac3ef6efe880e0e) by [@sa-tasche](https://github.com/sa-tasche)
+*   **BREAKING** Update npm license usage information. [b0413bf](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/b0413bf51fcae3743705cf929c55dbf744dcc210) by [@atomist-bot](https://github.com/atomist-bot)
+*   **BREAKING** Merge pull request #19 from mitgedanken/atomist/npm-license-translation-to-german. [c37a84a](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/c37a84a58fabad280ea83b183681e4e4573ec216) by [@sa-tasche](https://github.com/sa-tasche)
