@@ -20,6 +20,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 *   **BREAKING** Update npm license usage information. [b0413bf](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/b0413bf51fcae3743705cf929c55dbf744dcc210) by [@atomist-bot](https://github.com/atomist-bot)
 *   **BREAKING** Merge pull request #19 from mitgedanken/atomist/npm-license-translation-to-german. [c37a84a](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/c37a84a58fabad280ea83b183681e4e4573ec216) by [@sa-tasche](https://github.com/sa-tasche)
 *   **BREAKING** Delete package-lock.json. [00fec54](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/00fec54345b5ce94c883a0e3bc49b069485d5b46) by [@sa-tasche](https://github.com/sa-tasche)
+*   **BREAKING** Restyled by prettier-markdown. [5dba5f4](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/5dba5f45abafb1f0a05230e736add1370c320d7b) by [@restyled-commits](https://github.com/restyled-commits)
+*   **BREAKING** Update npm license usage information. [15ef136](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/15ef1360e573e5e014722da19359cb0f99d35387) by [@atomist-bot](https://github.com/atomist-bot)
+*   **BREAKING** Merge pull request #16 from mitgedanken/restyled/dependabot/npm_and_yarn/handlebars-4.7.7. [e3a9080](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/e3a9080fdaab63d459199758778a2d99fe13d6da) by [@sa-tasche](https://github.com/sa-tasche)
 
 ### Changed
 
@@ -34,6 +37,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 *   **BREAKING** Update npm license usage information. [b0413bf](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/b0413bf51fcae3743705cf929c55dbf744dcc210) by [@atomist-bot](https://github.com/atomist-bot)
 *   **BREAKING** Merge pull request #19 from mitgedanken/atomist/npm-license-translation-to-german. [c37a84a](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/c37a84a58fabad280ea83b183681e4e4573ec216) by [@sa-tasche](https://github.com/sa-tasche)
 *   **BREAKING** Delete package-lock.json. [00fec54](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/00fec54345b5ce94c883a0e3bc49b069485d5b46) by [@sa-tasche](https://github.com/sa-tasche)
+*   **BREAKING** Restyled by prettier-markdown. [5dba5f4](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/5dba5f45abafb1f0a05230e736add1370c320d7b) by [@restyled-commits](https://github.com/restyled-commits)
+*   **BREAKING** Update npm license usage information. [15ef136](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/15ef1360e573e5e014722da19359cb0f99d35387) by [@atomist-bot](https://github.com/atomist-bot)
+*   **BREAKING** Merge pull request #16 from mitgedanken/restyled/dependabot/npm_and_yarn/handlebars-4.7.7. [e3a9080](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/e3a9080fdaab63d459199758778a2d99fe13d6da) by [@sa-tasche](https://github.com/sa-tasche)
 
 ### Deprecated
 
@@ -48,6 +54,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 *   **BREAKING** Update npm license usage information. [b0413bf](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/b0413bf51fcae3743705cf929c55dbf744dcc210) by [@atomist-bot](https://github.com/atomist-bot)
 *   **BREAKING** Merge pull request #19 from mitgedanken/atomist/npm-license-translation-to-german. [c37a84a](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/c37a84a58fabad280ea83b183681e4e4573ec216) by [@sa-tasche](https://github.com/sa-tasche)
 *   **BREAKING** Delete package-lock.json. [00fec54](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/00fec54345b5ce94c883a0e3bc49b069485d5b46) by [@sa-tasche](https://github.com/sa-tasche)
+*   **BREAKING** Restyled by prettier-markdown. [5dba5f4](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/5dba5f45abafb1f0a05230e736add1370c320d7b) by [@restyled-commits](https://github.com/restyled-commits)
+*   **BREAKING** Update npm license usage information. [15ef136](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/15ef1360e573e5e014722da19359cb0f99d35387) by [@atomist-bot](https://github.com/atomist-bot)
+*   **BREAKING** Merge pull request #16 from mitgedanken/restyled/dependabot/npm_and_yarn/handlebars-4.7.7. [e3a9080](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/e3a9080fdaab63d459199758778a2d99fe13d6da) by [@sa-tasche](https://github.com/sa-tasche)
 
 ### Removed
 
@@ -62,6 +71,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 *   **BREAKING** Update npm license usage information. [b0413bf](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/b0413bf51fcae3743705cf929c55dbf744dcc210) by [@atomist-bot](https://github.com/atomist-bot)
 *   **BREAKING** Merge pull request #19 from mitgedanken/atomist/npm-license-translation-to-german. [c37a84a](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/c37a84a58fabad280ea83b183681e4e4573ec216) by [@sa-tasche](https://github.com/sa-tasche)
 *   **BREAKING** Delete package-lock.json. [00fec54](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/00fec54345b5ce94c883a0e3bc49b069485d5b46) by [@sa-tasche](https://github.com/sa-tasche)
+*   **BREAKING** Restyled by prettier-markdown. [5dba5f4](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/5dba5f45abafb1f0a05230e736add1370c320d7b) by [@restyled-commits](https://github.com/restyled-commits)
+*   **BREAKING** Update npm license usage information. [15ef136](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/15ef1360e573e5e014722da19359cb0f99d35387) by [@atomist-bot](https://github.com/atomist-bot)
+*   **BREAKING** Merge pull request #16 from mitgedanken/restyled/dependabot/npm_and_yarn/handlebars-4.7.7. [e3a9080](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/e3a9080fdaab63d459199758778a2d99fe13d6da) by [@sa-tasche](https://github.com/sa-tasche)
 
 ### Fixed
 
@@ -76,6 +88,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 *   **BREAKING** Update npm license usage information. [b0413bf](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/b0413bf51fcae3743705cf929c55dbf744dcc210) by [@atomist-bot](https://github.com/atomist-bot)
 *   **BREAKING** Merge pull request #19 from mitgedanken/atomist/npm-license-translation-to-german. [c37a84a](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/c37a84a58fabad280ea83b183681e4e4573ec216) by [@sa-tasche](https://github.com/sa-tasche)
 *   **BREAKING** Delete package-lock.json. [00fec54](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/00fec54345b5ce94c883a0e3bc49b069485d5b46) by [@sa-tasche](https://github.com/sa-tasche)
+*   **BREAKING** Restyled by prettier-markdown. [5dba5f4](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/5dba5f45abafb1f0a05230e736add1370c320d7b) by [@restyled-commits](https://github.com/restyled-commits)
+*   **BREAKING** Update npm license usage information. [15ef136](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/15ef1360e573e5e014722da19359cb0f99d35387) by [@atomist-bot](https://github.com/atomist-bot)
+*   **BREAKING** Merge pull request #16 from mitgedanken/restyled/dependabot/npm_and_yarn/handlebars-4.7.7. [e3a9080](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/e3a9080fdaab63d459199758778a2d99fe13d6da) by [@sa-tasche](https://github.com/sa-tasche)
 
 ### Security
 
@@ -90,3 +105,6 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 *   **BREAKING** Update npm license usage information. [b0413bf](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/b0413bf51fcae3743705cf929c55dbf744dcc210) by [@atomist-bot](https://github.com/atomist-bot)
 *   **BREAKING** Merge pull request #19 from mitgedanken/atomist/npm-license-translation-to-german. [c37a84a](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/c37a84a58fabad280ea83b183681e4e4573ec216) by [@sa-tasche](https://github.com/sa-tasche)
 *   **BREAKING** Delete package-lock.json. [00fec54](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/00fec54345b5ce94c883a0e3bc49b069485d5b46) by [@sa-tasche](https://github.com/sa-tasche)
+*   **BREAKING** Restyled by prettier-markdown. [5dba5f4](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/5dba5f45abafb1f0a05230e736add1370c320d7b) by [@restyled-commits](https://github.com/restyled-commits)
+*   **BREAKING** Update npm license usage information. [15ef136](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/15ef1360e573e5e014722da19359cb0f99d35387) by [@atomist-bot](https://github.com/atomist-bot)
+*   **BREAKING** Merge pull request #16 from mitgedanken/restyled/dependabot/npm_and_yarn/handlebars-4.7.7. [e3a9080](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/e3a9080fdaab63d459199758778a2d99fe13d6da) by [@sa-tasche](https://github.com/sa-tasche)
