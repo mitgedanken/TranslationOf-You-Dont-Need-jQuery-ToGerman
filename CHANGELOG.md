@@ -23,6 +23,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 *   **BREAKING** Restyled by prettier-markdown. [5dba5f4](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/5dba5f45abafb1f0a05230e736add1370c320d7b) by [@restyled-commits](https://github.com/restyled-commits)
 *   **BREAKING** Update npm license usage information. [15ef136](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/15ef1360e573e5e014722da19359cb0f99d35387) by [@atomist-bot](https://github.com/atomist-bot)
 *   **BREAKING** Merge pull request #16 from mitgedanken/restyled/dependabot/npm_and_yarn/handlebars-4.7.7. [e3a9080](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/e3a9080fdaab63d459199758778a2d99fe13d6da) by [@sa-tasche](https://github.com/sa-tasche)
+*   **BREAKING** ESLint fixes. [7c46829](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/7c46829cc45458a3fe56d8d8203cc8573c47200c) by [@atomist-bot](https://github.com/atomist-bot)
+*   **BREAKING** Merge pull request #23 from mitgedanken/atomist/eslint-translation-to-german. [1de4e35](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/1de4e3588acc0a4889d67c75ba17ffb7359d71d5) by [@sa-tasche](https://github.com/sa-tasche)
 
 ### Changed
 
@@ -40,6 +42,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 *   **BREAKING** Restyled by prettier-markdown. [5dba5f4](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/5dba5f45abafb1f0a05230e736add1370c320d7b) by [@restyled-commits](https://github.com/restyled-commits)
 *   **BREAKING** Update npm license usage information. [15ef136](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/15ef1360e573e5e014722da19359cb0f99d35387) by [@atomist-bot](https://github.com/atomist-bot)
 *   **BREAKING** Merge pull request #16 from mitgedanken/restyled/dependabot/npm_and_yarn/handlebars-4.7.7. [e3a9080](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/e3a9080fdaab63d459199758778a2d99fe13d6da) by [@sa-tasche](https://github.com/sa-tasche)
+*   **BREAKING** ESLint fixes. [7c46829](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/7c46829cc45458a3fe56d8d8203cc8573c47200c) by [@atomist-bot](https://github.com/atomist-bot)
+*   **BREAKING** Merge pull request #23 from mitgedanken/atomist/eslint-translation-to-german. [1de4e35](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/1de4e3588acc0a4889d67c75ba17ffb7359d71d5) by [@sa-tasche](https://github.com/sa-tasche)
 
 ### Deprecated
 
@@ -57,6 +61,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 *   **BREAKING** Restyled by prettier-markdown. [5dba5f4](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/5dba5f45abafb1f0a05230e736add1370c320d7b) by [@restyled-commits](https://github.com/restyled-commits)
 *   **BREAKING** Update npm license usage information. [15ef136](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/15ef1360e573e5e014722da19359cb0f99d35387) by [@atomist-bot](https://github.com/atomist-bot)
 *   **BREAKING** Merge pull request #16 from mitgedanken/restyled/dependabot/npm_and_yarn/handlebars-4.7.7. [e3a9080](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/e3a9080fdaab63d459199758778a2d99fe13d6da) by [@sa-tasche](https://github.com/sa-tasche)
+*   **BREAKING** ESLint fixes. [7c46829](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/7c46829cc45458a3fe56d8d8203cc8573c47200c) by [@atomist-bot](https://github.com/atomist-bot)
+*   **BREAKING** Merge pull request #23 from mitgedanken/atomist/eslint-translation-to-german. [1de4e35](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/1de4e3588acc0a4889d67c75ba17ffb7359d71d5) by [@sa-tasche](https://github.com/sa-tasche)
 
 ### Removed
 
@@ -74,6 +80,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 *   **BREAKING** Restyled by prettier-markdown. [5dba5f4](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/5dba5f45abafb1f0a05230e736add1370c320d7b) by [@restyled-commits](https://github.com/restyled-commits)
 *   **BREAKING** Update npm license usage information. [15ef136](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/15ef1360e573e5e014722da19359cb0f99d35387) by [@atomist-bot](https://github.com/atomist-bot)
 *   **BREAKING** Merge pull request #16 from mitgedanken/restyled/dependabot/npm_and_yarn/handlebars-4.7.7. [e3a9080](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/e3a9080fdaab63d459199758778a2d99fe13d6da) by [@sa-tasche](https://github.com/sa-tasche)
+*   **BREAKING** ESLint fixes. [7c46829](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/7c46829cc45458a3fe56d8d8203cc8573c47200c) by [@atomist-bot](https://github.com/atomist-bot)
+*   **BREAKING** Merge pull request #23 from mitgedanken/atomist/eslint-translation-to-german. [1de4e35](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/1de4e3588acc0a4889d67c75ba17ffb7359d71d5) by [@sa-tasche](https://github.com/sa-tasche)
 
 ### Fixed
 
@@ -91,6 +99,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 *   **BREAKING** Restyled by prettier-markdown. [5dba5f4](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/5dba5f45abafb1f0a05230e736add1370c320d7b) by [@restyled-commits](https://github.com/restyled-commits)
 *   **BREAKING** Update npm license usage information. [15ef136](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/15ef1360e573e5e014722da19359cb0f99d35387) by [@atomist-bot](https://github.com/atomist-bot)
 *   **BREAKING** Merge pull request #16 from mitgedanken/restyled/dependabot/npm_and_yarn/handlebars-4.7.7. [e3a9080](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/e3a9080fdaab63d459199758778a2d99fe13d6da) by [@sa-tasche](https://github.com/sa-tasche)
+*   **BREAKING** ESLint fixes. [7c46829](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/7c46829cc45458a3fe56d8d8203cc8573c47200c) by [@atomist-bot](https://github.com/atomist-bot)
+*   **BREAKING** Merge pull request #23 from mitgedanken/atomist/eslint-translation-to-german. [1de4e35](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/1de4e3588acc0a4889d67c75ba17ffb7359d71d5) by [@sa-tasche](https://github.com/sa-tasche)
 
 ### Security
 
@@ -108,3 +118,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 *   **BREAKING** Restyled by prettier-markdown. [5dba5f4](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/5dba5f45abafb1f0a05230e736add1370c320d7b) by [@restyled-commits](https://github.com/restyled-commits)
 *   **BREAKING** Update npm license usage information. [15ef136](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/15ef1360e573e5e014722da19359cb0f99d35387) by [@atomist-bot](https://github.com/atomist-bot)
 *   **BREAKING** Merge pull request #16 from mitgedanken/restyled/dependabot/npm_and_yarn/handlebars-4.7.7. [e3a9080](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/e3a9080fdaab63d459199758778a2d99fe13d6da) by [@sa-tasche](https://github.com/sa-tasche)
+*   **BREAKING** ESLint fixes. [7c46829](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/7c46829cc45458a3fe56d8d8203cc8573c47200c) by [@atomist-bot](https://github.com/atomist-bot)
+*   **BREAKING** Merge pull request #23 from mitgedanken/atomist/eslint-translation-to-german. [1de4e35](https://github.com/mitgedanken/TranslationOf-You-Dont-Need-jQuery-ToGerman/commit/1de4e3588acc0a4889d67c75ba17ffb7359d71d5) by [@sa-tasche](https://github.com/sa-tasche)
