@@ -22,7 +22,7 @@
     "karma-firefox-launcher": "^0.1",
     "karma-mocha": "^0.2.1",
     "lint-staged": "^11.0.1",
-    "mocha": "^2.3",
+    "mocha": "^10.1",
     "prettier": "^2.3.2"
   },
   "repository": {
